@@ -11,17 +11,17 @@ using UnityEngine;
 /// </summary>
 public class StateMachine
 {
-    private IStateMachineOwner owner;
+    private IAIInfo aiInfo;
    
     private Dictionary<Type, StateBase> stateDic;
 
     private StateBase curState;
 
-    public IStateMachineOwner Owner { get { return owner; } }
+    public IAIInfo AIInfo { get { return aiInfo; } }
 
-    public StateMachine(IStateMachineOwner owner)
+    public StateMachine(IAIInfo owner)
     {
-        this.owner = owner;
+        this.aiInfo = owner;
         stateDic = new Dictionary<Type, StateBase>();
     }
 
@@ -54,11 +54,62 @@ public class StateMachine
         curState = nextState;
         curState.Enter();
     }
+
+    public void ChangeState(Type type)
+    {
+        if (!typeof(StateBase).IsAssignableFrom(type)) Debug.LogError("type 变量不是StateBase的派生类");
+        StateBase nextState = null;
+        if (curState == null)
+        {
+            ConstructorInfo csr = type.GetConstructor(new Type[] { typeof(StateMachine) });
+            nextState = csr.Invoke(new object[] { this }) as StateBase;
+            stateDic.Add(type, nextState);
+        }
+        else
+        {
+            if (stateDic.ContainsKey(type)) nextState = stateDic[type];
+            else
+            {
+                ConstructorInfo csr = type.GetConstructor(new Type[] { typeof(StateMachine) });
+                nextState = csr.Invoke(new object[] { this }) as StateBase;
+                stateDic.Add(type, nextState);
+            }
+        }
+
+        curState?.Exit();
+        curState = nextState;
+        curState.Enter();
+    }
+     
     /// <summary>
     /// 调用该函数执行状态机中的状态逻辑
     /// </summary>
     public void Update()
     {
         if(curState != null) curState.Update();
+    }
+
+    public T GetState<T>() where T : StateBase
+    {
+        if(stateDic.ContainsKey(typeof(T))) return stateDic[typeof(T)] as T;
+        
+        Type type = typeof(T);
+        StateBase state = null;
+        ConstructorInfo csr = type.GetConstructor(new Type[] { typeof(StateMachine) });
+        state = csr.Invoke(new object[] { this }) as StateBase;
+        stateDic.Add(type, state);
+        return state as T;
+    }
+
+    public StateBase GetState(Type type)
+    {
+        if (!typeof(StateMachine).IsAssignableFrom(type)) Debug.LogError("type 不是 StateBase 的派生类");
+        if(stateDic.ContainsKey(type)) return stateDic[type];
+        
+        StateBase state = null;
+        ConstructorInfo csr = type.GetConstructor(new Type[] { typeof(StateMachine) });
+        state = csr.Invoke(new object[] { this }) as StateBase;
+        stateDic.Add(type, state);
+        return state;
     }
 }

@@ -2,54 +2,83 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ArmBase : MonoBehaviour,IHurt,IAtkerInfo,IStateMachineOwner
+public class ArmBase : AIBehaviour,IAtkerInfo,IHurt
 {
-    private float hp;
-    private float atkVal;
-    private float atkSpeed;
-    private float atkRange;
-    private float moveSpeed;
+    protected Animator animator;
+    protected Team team;
+    public float hp;
+    public float walkHeight;
+    public float checkRange;
+    public float atkVal;
+    public float atkSpeed;
+    public float atkDis;
+    public float moveSpeed;
+    
+    #region IAIInfo接口的内容
+    public override bool IsBack => throw new System.NotImplementedException();
 
-    //数据
+    public override bool IsDefence => throw new System.NotImplementedException();
 
-    private StateMachine stateMachine;
+    public override bool IsYuHui => throw new System.NotImplementedException();
 
-    public float AtkVal { get=>atkVal; }
+    public override bool IsCheck => throw new System.NotImplementedException();
 
-    public abstract void Hurt(IAtkerInfo atkerInfo);
-    public abstract void HurtStateEnter(E_Command command);
-    public abstract void HurtStateExit(E_Command command);
-    public abstract void HurtStateUpdate(StateMachine stateMachine, E_Command command);
-    public abstract void IdleStateEnter(E_Command command);
-    public abstract void IdleStateExit(E_Command command);
-    public abstract void IdleStateUpdate(StateMachine stateMachine, E_Command command);
-
-    /// <summary>
-    /// 提供给外部改变兵种指令的函数
-    /// </summary>
-    /// <param name="command">指令枚举</param>
-    public void GetCommand(E_Command command)
+    public override bool IsSerachPath
     {
-        switch (command)
+        get
         {
-            case E_Command.rush:
-                stateMachine.ChangeState<RushCommandState>();
-                break;
-            case E_Command.back:
-                stateMachine.ChangeState<BackCommandState>();
-                break;
-            case E_Command.check:
-                stateMachine.ChangeState<CheckCommandState>();
-                break;
-            case E_Command.yuhui:
-                stateMachine.ChangeState<YuHuiCommandState>();
-                break;
+            //敌方没消灭同时没到施展指令的范围
+            return true;
         }
     }
 
+    public override bool IsIdle
+    {
+        get
+        {
+            //敌方消灭
+            return false;
+        }
+    }
+
+    public override bool IsAtk => true;
+    public override bool AnimationListener(string curAnimationName, float targetNormalizedTime)
+    {
+        AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
+        AnimatorStateInfo curStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (nextStateInfo.IsName(curAnimationName)) return false;
+
+        if (curStateInfo.IsName(curAnimationName) && curStateInfo.normalizedTime >= targetNormalizedTime) return true;
+        return false;
+    }
+
+    public override void ChangeAnimation(string animationName)
+    {
+        animator.CrossFadeInFixedTime(animationName, 0.2f);
+    }
+    #endregion
+
+    #region IAtkerInfo的内容
+    public float AtkVal => atkVal;
+    #endregion
+
+    #region IHurt的内容
+    public virtual void Hurt(IAtkerInfo atkerInfo)
+    {
+        hp -= atkerInfo.AtkVal;
+    }
+    #endregion
+
     /// <summary>
-    /// 根据指令初始化兵种数据
+    /// 设置小队
     /// </summary>
-    /// <param name="command"></param>
-    protected abstract void IntialData(E_Command command);
+    /// <param name="team">所属小队对象</param>
+    public void SetTeam(Team team)
+    {
+        this.team = team;
+    }
+
+  
+
+  
 }

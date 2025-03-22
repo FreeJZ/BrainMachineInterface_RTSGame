@@ -5,6 +5,10 @@ using UnityEngine;
 public enum E_Command
 {
     /// <summary>
+    /// Ñ°Â·
+    /// </summary>
+    sreachPath,
+    /// <summary>
     /// ¹¥»÷
     /// </summary>
     rush,
@@ -19,5 +23,9 @@ public enum E_Command
     /// <summary>
     /// ÓØ»Ø
     /// </summary>
-    yuhui
+    yuhui,
+    /// <summary>
+    /// ·ÀÓù
+    /// </summary>
+    defence
 }
