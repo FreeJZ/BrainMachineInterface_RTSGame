@@ -13,14 +13,17 @@ public class  DefenceState : StateBase
     }
     public override void Enter()
     {
+        StateMachine.AIInfo.DefenceStateEnter();
     }
 
     public override void Update()
     {
+        StateMachine.AIInfo.DefenceStateUpdate();
         base.Update();
     }
 
     public override void Exit()
     {
+        StateMachine.AIInfo.DefenceStateExit();
     }
 }

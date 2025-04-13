@@ -47,4 +47,59 @@ public interface IAIInfo
     /// <returns></returns>
     bool AnimationListener(string curAniimationName, float targetNormalizedTime);
 
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateUpdate();
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateEnter();
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateExit();
+
+
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateUpdate();
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateEnter();
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateExit();
+
+
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateUpdate();
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateEnter();
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateExit();
+
+
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateUpdate();
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateEnter();
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateExit();
+
+
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateUpdate();
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateEnter();
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateExit();
+
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateUpdate();
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateEnter();
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateExit();
+
+
+
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateUpdate();
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateEnter();
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateExit();
+
 }

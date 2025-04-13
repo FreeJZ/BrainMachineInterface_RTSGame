@@ -10,7 +10,7 @@ public class PanelBase : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("淡入淡出速度")]
-    private float fadeSpeed;
+    private float fadeSpeed = 1;
     private bool toShow;
     private bool toHide;
 

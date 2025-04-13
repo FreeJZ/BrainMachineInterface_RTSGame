@@ -13,15 +13,18 @@ public class YuHuiState : StateBase
     }
     public override void Enter()
     {
+        StateMachine.AIInfo.YuHuiStateEnter();
     }
 
     public override void Update()
     {
+        StateMachine.AIInfo.YuHuiStateUpdate();
         base.Update();
     }
 
     public override void Exit()
     {
+        StateMachine.AIInfo.YuHuiStateExit();
     }
 
    

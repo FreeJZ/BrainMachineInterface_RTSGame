@@ -42,7 +42,7 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     /// </summary>
     /// <param name="firstCmd">第一指令</param>
     /// <param name="secondCmd">第二指令</param>
-    private void StateLink(E_Command firstCmd, E_Command secondCmd)
+    private void StateLink(E_Command firstCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag,int secondCmd2FristCmdFlag,int searchPath2FcFlag, int fc2SearchPathFlag)
     {
         stateMachine.ChangeState<IdleState>();
 
@@ -55,18 +55,18 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
         state2.ClearTransilation();
         
         //state1 和 state2 连接
-        Func<IAIInfo,bool> invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(firstCmd, secondCmd);
-        state1.AddTransilation(state2.GetType(), invokeEnvent);
+        Func<IAIInfo, int, bool> invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(firstCmd, secondCmd);
+        state1.AddTransilation(state2.GetType(), invokeEnvent,fristCmd2SecondCmdFlag);
 
         invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(secondCmd, firstCmd);
-        state2.AddTransilation(state1.GetType(), invokeEnvent);
+        state2.AddTransilation(state1.GetType(), invokeEnvent,secondCmd2FristCmdFlag);
 
         //sreachPath 和 state1 连接
         invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(E_Command.sreachPath, firstCmd);
-        sreachPathState.AddTransilation(state1.GetType(),invokeEnvent);
+        sreachPathState.AddTransilation(state1.GetType(),invokeEnvent,secondCmd2FristCmdFlag);
         
         invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(firstCmd,E_Command.sreachPath);
-        state1.AddTransilation(sreachPathState.GetType(),invokeEnvent);
+        state1.AddTransilation(sreachPathState.GetType(),invokeEnvent, fristCmd2SecondCmdFlag);
 
     }
 
@@ -75,12 +75,17 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     /// </summary>
     /// <param name="fristCmd">第一指令</param>
     /// <param name="secondCmd">第二指令</param>
-    public void SetCommand(E_Command fristCmd,E_Command secondCmd,ArmBase arm)
+    /// <param name="arm">兵种自身</param>
+    /// <param name="fristCmd2SecondCmdFlag">指令1->指令2的转换条件的标识，区分使用哪个转换条件</param>
+    /// <param name="secondCmd2FristCmdFlag">指令2->指令1...</param>
+    /// <param name="searchPath2FcFlag">寻路->指令1...</param>
+    /// <param name="fc2SearchPathFlag">指令1->寻路...</param>
+    public void SetCommand(E_Command fristCmd,E_Command secondCmd,ArmBase arm, int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag = 0, int fc2SearchPathFlag = 0)
     {
         //处理Buffer
         BufferHandle.Handle(fristCmd, secondCmd, arm);
         //动态更新状态机
-        StateLink(fristCmd, secondCmd);
+        StateLink(fristCmd, secondCmd,fristCmd2SecondCmdFlag,secondCmd2FristCmdFlag,searchPath2FcFlag,fc2SearchPathFlag);
     }
 
     private StateBase GetStateByCommand(E_Command cmd)
@@ -110,5 +115,25 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
         return state;
     }
 
-   
+    public abstract void AtkStateUpdate();
+    public abstract void AtkStateEnter();
+    public abstract void AtkStateExit();
+    public abstract void BackStateUpdate();
+    public abstract void BackStateEnter();
+    public abstract void BackStateExit();
+    public abstract void DefenceStateUpdate();
+    public abstract void DefenceStateEnter();
+    public abstract void DefenceStateExit();
+    public abstract void YuHuiStateUpdate();
+    public abstract void YuHuiStateEnter();
+    public abstract void YuHuiStateExit();
+    public abstract void CheckStateUpdate();
+    public abstract void CheckStateEnter();
+    public abstract void CheckStateExit();
+    public abstract void SearchPathStateUpdate();
+    public abstract void SearchPathStateEnter();
+    public abstract void SearchPathStateExit();
+    public abstract void IdleStateUpdate();
+    public abstract void IdleStateEnter();
+    public abstract void IdleStateExit();
 }

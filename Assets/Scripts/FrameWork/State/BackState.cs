@@ -14,15 +14,17 @@ public class BackState :StateBase
     }
     public override void Enter()
     {
-        Debug.Log("BackEnter");
+        StateMachine.AIInfo.BackStateEnter();
     }
 
     public override void Update()
     {
         base.Update();
+        StateMachine.AIInfo.BackStateUpdate();
     }
 
     public override void Exit()
     {
+        stateMachine.AIInfo.BackStateExit();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+using System.Collections.Generic;
 /// <summary>
 /// 状态基类
 /// 所有状态派生自它
@@ -33,9 +33,10 @@ public abstract class StateBase
     /// </summary>
     /// <param name="toStateType">目标状态类型</param>
     /// <param name="invokeEvent">启动转换的事件</param>
-    protected void AddTransilation(Type toStateType,Func<bool> invokeEvent)
+    /// <param name="invokeFlag">传入invokeEvent的参数</param>
+    protected void AddTransilation(Type toStateType,Func<int,bool> invokeEvent,int invokeFlag)
     {
-        transilations.AddTransilation(toStateType, invokeEvent);
+        transilations.AddTransilation(toStateType,invokeEvent,invokeFlag);
     }
 
     /// <summary>
@@ -44,9 +45,10 @@ public abstract class StateBase
     /// </summary>
     /// <param name="toStateType">目标状态类型</param>
     /// <param name="invokeEvent">启动转换的事件</param>
-    public void AddTransilation(Type toStateType,Func<IAIInfo,bool> invokeEvent)
+    /// <param name="invokeFlag">传入invokeEvent的参数</param>
+    public void AddTransilation(Type toStateType,Func<IAIInfo,int,bool> invokeEvent, int invokeFlag)
     {
-        AddTransilation(toStateType, () => invokeEvent(StateMachine.AIInfo));
+        AddTransilation(toStateType, (flag) => invokeEvent(StateMachine.AIInfo,flag), invokeFlag);
     }
 
     /// <summary>

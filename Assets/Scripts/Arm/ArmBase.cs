@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmBase : AIBehaviour,IAtkerInfo,IHurt
+public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 {
     protected Animator animator;
-    protected Team team;
     public float hp;
     public float walkHeight;
     public float checkRange;
@@ -13,7 +13,29 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt
     public float atkSpeed;
     public float atkDis;
     public float moveSpeed;
-    
+
+    #region ISelectable接口的内容
+    public virtual Vector3 BottomPoint => transform.position + Vector3.down*GetComponent<CapsuleCollider>().height/2;
+
+    public virtual Vector3 TopPoint => transform.position + Vector3.up * GetComponent<CapsuleCollider>().height/2;
+
+    public virtual Vector3 RightPoint => transform.position + Vector3.right * GetComponent<CapsuleCollider>().radius;
+
+    public virtual Vector3 LeftPoint => transform.position  + Vector3.left * GetComponent<CapsuleCollider>().radius;
+
+    public virtual bool IsSelected { get; set; }
+
+    public virtual void SelectHighLight(Color color)
+    {
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        Material[] materials = meshRenderer.materials;
+        for(int i = 0;i< materials.Length;i++)
+        {
+            materials[i].color = color;
+        }
+    }
+    #endregion
+
     #region IAIInfo接口的内容
     public override bool IsBack => throw new System.NotImplementedException();
 
@@ -56,10 +78,118 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt
     {
         animator.CrossFadeInFixedTime(animationName, 0.2f);
     }
+
+    public override void AtkStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void AtkStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void AtkStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void BackStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void BackStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void BackStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DefenceStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DefenceStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DefenceStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void YuHuiStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void YuHuiStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void YuHuiStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void CheckStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void CheckStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void CheckStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void SearchPathStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void SearchPathStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void SearchPathStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void IdleStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void IdleStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void IdleStateExit()
+    {
+        throw new NotImplementedException();
+    }
+
     #endregion
 
     #region IAtkerInfo的内容
     public float AtkVal => atkVal;
+
+    
     #endregion
 
     #region IHurt的内容
@@ -68,17 +198,4 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt
         hp -= atkerInfo.AtkVal;
     }
     #endregion
-
-    /// <summary>
-    /// 设置小队
-    /// </summary>
-    /// <param name="team">所属小队对象</param>
-    public void SetTeam(Team team)
-    {
-        this.team = team;
-    }
-
-  
-
-  
 }
