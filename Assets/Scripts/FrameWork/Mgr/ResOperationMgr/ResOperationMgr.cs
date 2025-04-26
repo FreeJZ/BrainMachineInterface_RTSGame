@@ -16,8 +16,8 @@ public class ResOperationMgr : MonoSingleton<ResOperationMgr>
     /// <param name="secondCmd2FristCmdFlag">指令2->指令1...</param>
     /// <param name="searchPath2FcFlag">寻路->指令1...</param>
     /// <param name="fc2SearchPathFlag">指令1->寻路...</param>
-    public void SetCommand(ArmBase arm,E_Command fristCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag = 0, int fc2SearchPathFlag = 0)
+    public void SetCommand(ArmBase arm,E_Command fristCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag = -1, int fc2SearchPathFlag = -1, int sreachPath2ScFlag = -1, int Sc2SreachPathFlag = -1)
     {
-        arm.SetCommand(fristCmd, secondCmd, arm,fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, searchPath2FcFlag, fc2SearchPathFlag);
+        arm.SetCommand(fristCmd, secondCmd, arm,fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, searchPath2FcFlag, fc2SearchPathFlag,sreachPath2ScFlag,Sc2SreachPathFlag);
     }
 }

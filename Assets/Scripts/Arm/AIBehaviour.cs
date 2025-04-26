@@ -5,14 +5,11 @@ using UnityEngine;
 public abstract class AIBehaviour : MonoBehaviour,IAIInfo
 {
     protected StateMachine stateMachine;
+    protected bool isSetCommand;
+    protected E_Command curCommand;
+    public bool IsSetCommand => isSetCommand;
 
-    public abstract bool IsBack { get; }
-    public abstract bool IsDefence { get; }
-    public abstract bool IsYuHui { get; }
-    public abstract bool IsCheck { get; }
-    public abstract bool IsSerachPath { get; }
-    public abstract bool IsIdle { get; }
-    public abstract bool IsAtk { get; }
+    public E_Command CurCommand { get => curCommand; set => curCommand = value; }
 
     protected virtual void Awake()
     {
@@ -42,8 +39,9 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     /// </summary>
     /// <param name="firstCmd">第一指令</param>
     /// <param name="secondCmd">第二指令</param>
-    private void StateLink(E_Command firstCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag,int secondCmd2FristCmdFlag,int searchPath2FcFlag, int fc2SearchPathFlag)
+    private void StateLink(E_Command firstCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag,int secondCmd2FristCmdFlag,int searchPath2FcFlag, int fc2SearchPathFlag,int sreachPath2ScFlag,int Sc2SreachPathFlag)
     {
+
         stateMachine.ChangeState<IdleState>();
 
         //清空之前的转换连线
@@ -53,13 +51,24 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
         sreachPathState.ClearTransilation(typeof(IdleState));
         state1.ClearTransilation();
         state2.ClearTransilation();
-        
-        //state1 和 state2 连接
-        Func<IAIInfo, int, bool> invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(firstCmd, secondCmd);
-        state1.AddTransilation(state2.GetType(), invokeEnvent,fristCmd2SecondCmdFlag);
 
-        invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(secondCmd, firstCmd);
-        state2.AddTransilation(state1.GetType(), invokeEnvent,secondCmd2FristCmdFlag);
+        Func<IAIInfo, int, bool> invokeEnvent;
+        if(state1 != state2)
+        {
+            //state1 和 state2 连接
+            invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(firstCmd, secondCmd);
+            state1.AddTransilation(state2.GetType(), invokeEnvent, fristCmd2SecondCmdFlag);
+
+            invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(secondCmd, firstCmd);
+            state2.AddTransilation(state1.GetType(), invokeEnvent, secondCmd2FristCmdFlag);
+
+            //state2 和 sreachPath
+            invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(secondCmd, E_Command.sreachPath);
+            state2.AddTransilation(sreachPathState.GetType(), invokeEnvent, Sc2SreachPathFlag);
+
+            invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(E_Command.sreachPath, secondCmd);
+            sreachPathState.AddTransilation(state2.GetType(), invokeEnvent, sreachPath2ScFlag);
+        }
 
         //sreachPath 和 state1 连接
         invokeEnvent = TranslitatoinInvokeEventFactory.Instance.GetTransilatoinEvent(E_Command.sreachPath, firstCmd);
@@ -80,12 +89,16 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     /// <param name="secondCmd2FristCmdFlag">指令2->指令1...</param>
     /// <param name="searchPath2FcFlag">寻路->指令1...</param>
     /// <param name="fc2SearchPathFlag">指令1->寻路...</param>
-    public void SetCommand(E_Command fristCmd,E_Command secondCmd,ArmBase arm, int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag = 0, int fc2SearchPathFlag = 0)
+    public void SetCommand(E_Command fristCmd,E_Command secondCmd,ArmBase arm, int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag, int fc2SearchPathFlag ,int sreachPath2ScFlag, int Sc2SreachPathFlag)
     {
+        //设置当前的指令
+        CurCommand = fristCmd;
+        //标记被设置指令
+        isSetCommand = true;
         //处理Buffer
         BufferHandle.Handle(fristCmd, secondCmd, arm);
         //动态更新状态机
-        StateLink(fristCmd, secondCmd,fristCmd2SecondCmdFlag,secondCmd2FristCmdFlag,searchPath2FcFlag,fc2SearchPathFlag);
+        StateLink(fristCmd, secondCmd,fristCmd2SecondCmdFlag,secondCmd2FristCmdFlag,searchPath2FcFlag,fc2SearchPathFlag,sreachPath2ScFlag,Sc2SreachPathFlag);
     }
 
     private StateBase GetStateByCommand(E_Command cmd)
@@ -136,4 +149,39 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     public abstract void IdleStateUpdate();
     public abstract void IdleStateEnter();
     public abstract void IdleStateExit();
+    public abstract void DeadStateUpdate();
+    public abstract void DeadStateEnter();
+    public abstract void DeadStateExit();
+
+    public abstract bool SearchPathToAtk(int flag);
+    public abstract bool SearchPathToDefence(int flag);
+    public abstract bool SearchPathToBack(int flag);
+    public abstract bool SearchPathToYuHui(int flag);
+    public abstract bool SearchPathToCheck(int flag);
+    public abstract bool AtkToSreachPath(int flag);
+    public abstract bool AtkToDefence(int flag);
+    public abstract bool AtkToBack(int flag);
+    public abstract bool AtkToYuHui(int flag);
+    public abstract bool AtkToCheck(int flag);
+    public abstract bool DefenceToSearchPath(int flag);
+    public abstract bool DefenceToAtk(int flag);
+    public abstract bool DefenceToBack(int flag);
+    public abstract bool DefenceToYuHui(int flag);
+    public abstract bool DefenceToCheck(int flag);
+    public abstract bool BackToSreachPath(int flag);
+    public abstract bool BackToAtk(int flag);
+    public abstract bool BackToDefence(int flag);
+    public abstract bool BackToYuHui(int flag);
+    public abstract bool BackToCheck(int flag);
+    public abstract bool YuHuiToSreachPath(int flag);
+    public abstract bool YuHuiToAtk(int flag);
+    public abstract bool YuHuiToDefence(int flag);
+    public abstract bool YuHuiToBack(int flag);
+    public abstract bool YuHuiToCheck(int flag);
+    public abstract bool CheckToSreachPath(int flag);
+    public abstract bool CheckToAtk(int flag);
+    public abstract bool CheckToDefence(int flag);
+    public abstract bool CheckToBack(int flag);
+    public abstract bool CheckToYuHui(int flag);
+   
 }

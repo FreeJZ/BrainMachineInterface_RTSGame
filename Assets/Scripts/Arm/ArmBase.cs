@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 {
@@ -13,6 +14,18 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     public float atkSpeed;
     public float atkDis;
     public float moveSpeed;
+
+    private ArmData armData;
+
+    protected Vector3 targetPoint;
+
+    protected NavMeshAgent agent;
+    protected override void Awake()
+    {
+        base.Awake();
+        agent = GetComponent<NavMeshAgent>();
+        if(agent == null) agent = gameObject.AddComponent<NavMeshAgent>();
+    }
 
     #region ISelectable接口的内容
     public virtual Vector3 BottomPoint => transform.position + Vector3.down*GetComponent<CapsuleCollider>().height/2;
@@ -37,33 +50,158 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     #endregion
 
     #region IAIInfo接口的内容
-    public override bool IsBack => throw new System.NotImplementedException();
 
-    public override bool IsDefence => throw new System.NotImplementedException();
 
-    public override bool IsYuHui => throw new System.NotImplementedException();
-
-    public override bool IsCheck => throw new System.NotImplementedException();
-
-    public override bool IsSerachPath
+    public override bool SearchPathToAtk(int flag)
     {
-        get
-        {
-            //敌方没消灭同时没到施展指令的范围
-            return true;
-        }
+        throw new NotImplementedException();
     }
 
-    public override bool IsIdle
+    public override bool SearchPathToDefence(int flag)
     {
-        get
-        {
-            //敌方消灭
-            return false;
-        }
+        throw new NotImplementedException();
     }
 
-    public override bool IsAtk => true;
+    public override bool SearchPathToBack(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool SearchPathToYuHui(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool SearchPathToCheck(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool AtkToSreachPath(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool AtkToDefence(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool AtkToBack(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool AtkToYuHui(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool AtkToCheck(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DefenceToSearchPath(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DefenceToAtk(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DefenceToBack(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DefenceToYuHui(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool DefenceToCheck(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool BackToSreachPath(int flag)
+    {
+        return true;
+    }
+
+    public override bool BackToAtk(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool BackToDefence(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool BackToYuHui(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool BackToCheck(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool YuHuiToSreachPath(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool YuHuiToAtk(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool YuHuiToDefence(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool YuHuiToBack(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool YuHuiToCheck(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckToSreachPath(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckToAtk(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckToDefence(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckToBack(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckToYuHui(int flag)
+    {
+        throw new NotImplementedException();
+    }
+
     public override bool AnimationListener(string curAnimationName, float targetNormalizedTime)
     {
         AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
@@ -96,17 +234,17 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 
     public override void BackStateUpdate()
     {
-        throw new NotImplementedException();
+        
     }
 
     public override void BackStateEnter()
     {
-        throw new NotImplementedException();
+        //获取我方营地位置
+        targetPoint = LevelMgr.Instance.LevelData.HomePoint;
     }
 
     public override void BackStateExit()
     {
-        throw new NotImplementedException();
     }
 
     public override void DefenceStateUpdate()
@@ -156,30 +294,50 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 
     public override void SearchPathStateUpdate()
     {
-        throw new NotImplementedException();
+        //Test
+        Debug.Log(Vector3.Distance(agent.pathEndPosition, transform.position));
+        if(Vector3.Distance(agent.pathEndPosition,transform.position) == 1)
+        {
+            stateMachine.ChangeState<IdleState>();
+        }
     }
 
     public override void SearchPathStateEnter()
     {
-        throw new NotImplementedException();
+        agent.isStopped = false;
+        agent.SetDestination(targetPoint);
     }
 
     public override void SearchPathStateExit()
     {
-        throw new NotImplementedException();
+        agent.isStopped = true;
     }
 
     public override void IdleStateUpdate()
     {
-        throw new NotImplementedException();
+        
     }
 
     public override void IdleStateEnter()
     {
-        throw new NotImplementedException();
+        targetPoint = LevelMgr.Instance.LevelData.EnemyPoint;
     }
 
     public override void IdleStateExit()
+    {
+    }
+
+    public override void DeadStateUpdate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DeadStateEnter()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DeadStateExit()
     {
         throw new NotImplementedException();
     }
@@ -189,13 +347,32 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     #region IAtkerInfo的内容
     public float AtkVal => atkVal;
 
-    
+
     #endregion
 
     #region IHurt的内容
     public virtual void Hurt(IAtkerInfo atkerInfo)
     {
-        hp -= atkerInfo.AtkVal;
+        if(hp > 0)
+        {
+            hp -= atkerInfo.AtkVal;
+            //死亡
+            if (hp <= 0)
+            {
+                stateMachine.ChangeState<DeadState>();
+            }
+        }
     }
+
+   
+
+
     #endregion
+
+    public void RestoreHP(float val)
+    {
+        Debug.Log("回血 + " + val);
+        //if(this.hp < armData.HP)
+        //    this.hp += val;
+    }
 }

@@ -11,7 +11,7 @@ public class SearchPathState : StateBase
 
         AddTransilation(typeof(IdleState), (flag) =>
         {
-            return StateMachine.AIInfo.IsIdle;
+            return false;
         },0);
     }
     public override void Enter()

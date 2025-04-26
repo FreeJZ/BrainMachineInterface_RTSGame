@@ -3,6 +3,6 @@
 /// </summary>
 public class ResPathConfig
 {
-    public static string UIPath = "Prefab/UI/";
+    public static string UIPrefabPath = "Prefab/UI/";
     public static string ArmPrefabPath = "Prefab/Arm/";
 }

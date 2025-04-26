@@ -14,12 +14,11 @@ public class IdleState : StateBase
         //添加Idle->SearchPath的转换条件
         AddTransilation(typeof(SearchPathState), (flag) =>
         {
-            return StateMachine.AIInfo.IsSerachPath;
+            return StateMachine.AIInfo.IsSetCommand && !LevelMgr.Instance.EnmyIsDead && !LevelMgr.Instance.HomeIsDead;
         },0);
     }
     public override void Enter()
     {
-        Debug.Log("IdleEnter");
         StateMachine.AIInfo.IdleStateEnter();
     }
     public override void Update()

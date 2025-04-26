@@ -11,13 +11,6 @@ using UnityEngine.UI;
 /// </summary>
 public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHandler,IPointerClickHandler
 {
-    //public RectTransform point1;
-    //public RectTransform point2;
-    //public RectTransform point3;
-    //public RectTransform point4;
-
-    //public Material material;
-
     //选择框
     public RectTransform sleBox;
     public float drawBox_centerOffset = 10;
@@ -28,6 +21,8 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
     private Vector2 pressPos;
     //当前鼠标的位置
     private Vector2 curPos;
+
+    private bool IsDrag;
 
     //临时存储
     private List<ArmBase> armList;
@@ -41,6 +36,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        IsDrag = true;
         pressPos = eventData.pressPosition;
         sleBox.gameObject.SetActive(true);
 
@@ -62,6 +58,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        IsDrag = false;
         sleBox.gameObject.SetActive(false);
     }
 
@@ -70,17 +67,23 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
     {
         curPos = eventData.position;
 
-        float diagonal = Vector2.Distance(curPos, pressPos);
-        float angle = Vector2.Angle(curPos - pressPos, Vector2.right);
+        Vector2 localCurPos,localPressPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, curPos, eventData.pressEventCamera, out localCurPos);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, pressPos,eventData.pressEventCamera, out localPressPos);
+        
+        float diagonal = Vector2.Distance(localCurPos, localPressPos);
+        float angle = Vector2.Angle(localCurPos - localPressPos, Vector2.right);
         if (angle > 90) angle = 180 - angle;
         float xLen = diagonal * Mathf.Cos(angle * Mathf.Deg2Rad);
         float yLen = diagonal * Mathf.Sin(angle * Mathf.Deg2Rad);
 
-        Vector2 center = new Vector2((curPos.x + pressPos.x) / 2, (curPos.y + pressPos.y) / 2);
+        Vector2 center = new Vector2((localCurPos.x + localPressPos.x) / 2, (localCurPos.y + localPressPos.y) / 2);
+        Vector2 size = new Vector2(xLen, yLen);
 
         sleBox.anchoredPosition = center;
-        sleBox.sizeDelta = new Vector2(xLen, yLen);
+        sleBox.sizeDelta = size;
     }
+    //更新框选的对象
     private void UpdateSelObjs()
     {
        
@@ -138,30 +141,50 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
     {
         Rect box = Rect.MinMaxRect(Mathf.Min(curPos.x, pressPos.x), Mathf.Min(curPos.y, pressPos.y), Mathf.Max(curPos.x, pressPos.x), Mathf.Max(curPos.y, pressPos.y));
 
-        //point1.anchoredPosition = box.min;
-        //point2.anchoredPosition = box.max;
-
         Vector2 bp = Camera.main.WorldToScreenPoint(obj.BottomPoint);
         Vector2 lp = Camera.main.WorldToScreenPoint(obj.LeftPoint);
         Vector2 rp = Camera.main.WorldToScreenPoint (obj.RightPoint);
         Vector2 tp = Camera.main.WorldToScreenPoint(obj.TopPoint);
         
-        //point1.anchoredPosition = bp;
-        //point2.anchoredPosition = lp;
-        //point3.anchoredPosition = rp;
-        //point4.anchoredPosition = tp;
-
         return box.Contains(bp,true) && box.Contains(lp, true) && box.Contains(rp, true) && box.Contains(tp,true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //右键点击确定选择的内容
         if(eventData.button == PointerEventData.InputButton.Right)
         {
             SelectionObjMgr.Instance.AddSelectionObjsRange(armList);
             for (int i = 0; i < armList.Count; i++)
             {
                 Debug.Log(armList[i].name);
+                //切换到选择命令面板
+
+            }
+        }
+        //左键点击单选一个对象
+        else if (!IsDrag && eventData.button == PointerEventData.InputButton.Left)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(eventData.position);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, raycheckRange, checkLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                ArmBase armBase = hit.collider.GetComponent<ArmBase>();
+                if (armBase != null && !armBase.IsSelected)
+                {
+                    armBase.IsSelected = true;
+                    armList.Add(armBase);
+                    armBase.SelectHighLight(Color.red);
+                }
+            }
+            else//左键点击空白处
+            {
+                for (int i = 0; i < armList.Count; i++)
+                {
+                    armList[i].IsSelected = false;
+                    armList[i].SelectHighLight(Color.white);
+                }
+                armList.Clear();
             }
         }
     }
@@ -173,5 +196,4 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
         Gizmos.DrawWireCube(Camera.main.transform.TransformPoint(GetBoxRayCentr()),GetBoxRayHalfSize()*2);
     }
 
-   
 }
