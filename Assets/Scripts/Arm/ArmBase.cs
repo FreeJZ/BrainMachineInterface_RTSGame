@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
+public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
 {
     protected Animator animator;
     public float hp;
@@ -14,9 +15,9 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     public float atkSpeed;
     public float atkDis;
     public float moveSpeed;
-
-    private ArmData armData;
-
+    public int maxAtkCnt;
+    public LayerMask atklayer;
+    protected ArmData armData;
     protected Vector3 targetPoint;
 
     protected NavMeshAgent agent;
@@ -25,7 +26,10 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         base.Awake();
         agent = GetComponent<NavMeshAgent>();
         if(agent == null) agent = gameObject.AddComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
+
+    public Team Team { get; set; }
 
     #region ISelectable接口的内容
     public virtual Vector3 BottomPoint => transform.position + Vector3.down*GetComponent<CapsuleCollider>().height/2;
@@ -38,23 +42,18 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 
     public virtual bool IsSelected { get; set; }
 
-    public virtual void SelectHighLight(Color color)
+    public virtual void SelectHighLight(bool isShow)
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        Material[] materials = meshRenderer.materials;
-        for(int i = 0;i< materials.Length;i++)
-        {
-            materials[i].color = color;
-        }
+        
     }
     #endregion
 
     #region IAIInfo接口的内容
 
-
+    //寻路到其他的转换
     public override bool SearchPathToAtk(int flag)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public override bool SearchPathToDefence(int flag)
@@ -77,31 +76,46 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //攻击到其他的转换
     public override bool AtkToSreachPath(int flag)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public override bool AtkToDefence(int flag)
     {
-        throw new NotImplementedException();
+        switch (flag)
+        {
+            case 0:
+                return Team.KD >= 0.5f;
+            case 1:
+                return Team.KD >= 0.7f;
+        }
+        return false;
     }
 
     public override bool AtkToBack(int flag)
     {
-        throw new NotImplementedException();
+        switch (flag)
+        {
+            case 0:
+                return hp / armData.hp <= 0.3f;
+            case 1:
+                return hp / armData.hp <= 0.5f;
+        }
+        return false;
     }
 
     public override bool AtkToYuHui(int flag)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public override bool AtkToCheck(int flag)
     {
-        throw new NotImplementedException();
+        return false;
     }
-
+    //防御到其他的转换
     public override bool DefenceToSearchPath(int flag)
     {
         throw new NotImplementedException();
@@ -127,9 +141,10 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //撤退到其他的转换
     public override bool BackToSreachPath(int flag)
     {
-        return true;
+        return false;
     }
 
     public override bool BackToAtk(int flag)
@@ -152,6 +167,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //迂回到其他的转换
     public override bool YuHuiToSreachPath(int flag)
     {
         throw new NotImplementedException();
@@ -176,7 +192,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     {
         throw new NotImplementedException();
     }
-
+    //侦查到其他的转换
     public override bool CheckToSreachPath(int flag)
     {
         throw new NotImplementedException();
@@ -216,7 +232,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     {
         animator.CrossFadeInFixedTime(animationName, 0.2f);
     }
-
+    //攻击状态
     public override void AtkStateUpdate()
     {
         throw new NotImplementedException();
@@ -232,6 +248,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //撤退状态
     public override void BackStateUpdate()
     {
         
@@ -239,14 +256,30 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
 
     public override void BackStateEnter()
     {
+        ChangeAnimation("run");
         //获取我方营地位置
-        targetPoint = LevelMgr.Instance.LevelData.HomePoint;
+        if (atklayer == 1 << LayerMask.NameToLayer("Enmy"))
+            targetPoint = LevelMgr.Instance.LevelData.HomePoint;
+        else
+            targetPoint = LevelMgr.Instance.LevelData.EnemyPoint;
+        //寻路
+        agent.SetDestination(targetPoint);
+        agent.isStopped = false;
+        //回血逻辑
+        MonoMgr.Instance.InvokeRepeating("RestoreHP", 0, 1);
     }
 
     public override void BackStateExit()
     {
+        agent.isStopped = true;
+        MonoMgr.Instance.CancelInvoke("RestoreHP");
     }
 
+    protected void RestoreHP()
+    {
+        hp += armData.hp * 0.1f;
+    }
+    //防御状态
     public override void DefenceStateUpdate()
     {
         throw new NotImplementedException();
@@ -261,7 +294,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     {
         throw new NotImplementedException();
     }
-
+    //迂回状态
     public override void YuHuiStateUpdate()
     {
         throw new NotImplementedException();
@@ -277,6 +310,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //侦查状态
     public override void CheckStateUpdate()
     {
         throw new NotImplementedException();
@@ -292,18 +326,15 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         throw new NotImplementedException();
     }
 
+    //寻路状态
     public override void SearchPathStateUpdate()
     {
-        //Test
-        Debug.Log(Vector3.Distance(agent.pathEndPosition, transform.position));
-        if(Vector3.Distance(agent.pathEndPosition,transform.position) == 1)
-        {
-            stateMachine.ChangeState<IdleState>();
-        }
+       
     }
 
     public override void SearchPathStateEnter()
     {
+        ChangeAnimation("run");
         agent.isStopped = false;
         agent.SetDestination(targetPoint);
     }
@@ -313,6 +344,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         agent.isStopped = true;
     }
 
+    //待机状态
     public override void IdleStateUpdate()
     {
         
@@ -321,25 +353,26 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     public override void IdleStateEnter()
     {
         targetPoint = LevelMgr.Instance.LevelData.EnemyPoint;
+        ChangeAnimation("idle");
     }
 
     public override void IdleStateExit()
     {
     }
-
+    //死亡状态
     public override void DeadStateUpdate()
     {
-        throw new NotImplementedException();
+        
     }
 
     public override void DeadStateEnter()
     {
-        throw new NotImplementedException();
+        ChangeAnimation("Dead");
     }
 
     public override void DeadStateExit()
     {
-        throw new NotImplementedException();
+        
     }
 
     #endregion
@@ -347,7 +380,17 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
     #region IAtkerInfo的内容
     public float AtkVal => atkVal;
 
+    public Transform AtkTarget { get; set; }
 
+
+
+
+    #endregion
+
+    #region IHurterInfo
+    public int MaxAtkCnt => maxAtkCnt;
+
+    public int CurAtkCnt { get; set; }
     #endregion
 
     #region IHurt的内容
@@ -359,6 +402,14 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
             //死亡
             if (hp <= 0)
             {
+                if(AtkTarget != null)
+                {
+                    IHurterInfo info = AtkTarget.GetComponent<IHurterInfo>();
+                    --info.CurAtkCnt;
+                }
+
+                ++atkerInfo.Team.HitEnmyCnt;
+                Team.RemoveMember(this);
                 stateMachine.ChangeState<DeadState>();
             }
         }
@@ -374,5 +425,14 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,ISelectable
         Debug.Log("回血 + " + val);
         //if(this.hp < armData.HP)
         //    this.hp += val;
+    }
+
+   
+
+    protected virtual void OnDrawGizmos()
+    {
+        //绘制攻击范围
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, atkDis);
     }
 }

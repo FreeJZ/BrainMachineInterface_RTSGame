@@ -43,7 +43,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
         for (int i = 0; i < armList.Count; i++)
         {
             armList[i].IsSelected = false;
-            armList[i].SelectHighLight(Color.white);
+            armList[i].SelectHighLight(false);
         }
         armList.Clear();
     }
@@ -96,7 +96,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
             if(selectable != null && IsInScreenSelectedBox(selectable) && !selectable.IsSelected)
             {
                 selectable.IsSelected = true;
-                selectable.SelectHighLight(Color.red);
+                selectable.SelectHighLight(true);
                 armList.Add(armbase);
             }
 
@@ -155,12 +155,12 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
         if(eventData.button == PointerEventData.InputButton.Right)
         {
             SelectionObjMgr.Instance.AddSelectionObjsRange(armList);
-            for (int i = 0; i < armList.Count; i++)
+            for(int i = 0;i<armList.Count;i++)
             {
-                Debug.Log(armList[i].name);
-                //切换到选择命令面板
-
+                armList[i].SelectHighLight(false);
             }
+            //切换到选择命令面板
+            UIMgr.Instance.ShowPanel<SetCommandPanel>();
         }
         //左键点击单选一个对象
         else if (!IsDrag && eventData.button == PointerEventData.InputButton.Left)
@@ -174,7 +174,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
                 {
                     armBase.IsSelected = true;
                     armList.Add(armBase);
-                    armBase.SelectHighLight(Color.red);
+                    armBase.SelectHighLight(true);
                 }
             }
             else//左键点击空白处
@@ -182,7 +182,7 @@ public class MouseSlePanel : PanelBase,IBeginDragHandler,IEndDragHandler,IDragHa
                 for (int i = 0; i < armList.Count; i++)
                 {
                     armList[i].IsSelected = false;
-                    armList[i].SelectHighLight(Color.white);
+                    armList[i].SelectHighLight(false);
                 }
                 armList.Clear();
             }

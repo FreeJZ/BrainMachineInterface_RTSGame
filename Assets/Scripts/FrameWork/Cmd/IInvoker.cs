@@ -26,6 +26,10 @@ public interface IInvoker
             {
                 undoStack.Push(curIndex);
                 ++curIndex;
+                if(redoStack.Count > 0 && redoStack.Peek() == curIndex)
+                {
+                    redoStack.Pop();
+                }
                 if (curIndex < CmdList.Count)
                     CmdList[curIndex].Enter();
             });

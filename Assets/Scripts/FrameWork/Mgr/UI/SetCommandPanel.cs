@@ -80,7 +80,12 @@ public class SetCommandPanel : PanelBase,IInvoker
         if(asInvoker.Exute())
         {
             //设置兵种指令
-
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                List<ArmBase> arms = SelectionObjMgr.Instance.ArmBaseList;
+                ResOperationMgr.Instance.AddTeam(firstCmd, secondCmd, fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, arms.ToArray());
+                SelectionObjMgr.Instance.Clear();
+            }
             //切换面板
             Debug.Log("命令执行完成，切换面板");
         }
@@ -369,7 +374,7 @@ public class SelectTsl_FirstCmd2SecondCmd : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "选择第一指令到第二指令的转换";
+        panel.tipContent.text = $"选择{panel.firstCmd}到{panel.secondCmd}的转换";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {
@@ -391,7 +396,7 @@ public class SelectTsl_SecondCmd2FirstCmd: SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "选择第二指令到第一指令的转换";
+        panel.tipContent.text = $"选择{panel.secondCmd}到{panel.firstCmd}的转换";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {

@@ -5,7 +5,36 @@ using UnityEngine;
 
 public class ResOperationMgr : MonoSingleton<ResOperationMgr>
 {
-  
+    private LinkedList<Team> m_TeamList;
+
+    private void Awake()
+    {
+        m_TeamList = new LinkedList<Team>();
+    }
+
+    private void Update()
+    {
+        for(LinkedListNode<Team> cur = m_TeamList.First;cur != null;cur = cur.Next)
+        {
+            if(cur.Value.Count == 0)
+            {
+                m_TeamList.Remove(cur);
+            }
+        }
+    }
+
+    public void AddTeam(E_Command fristCmd, E_Command secondCmd, int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag,params ArmBase[] arms)
+    {
+        //移除之前存在的小队
+        for(int i = 0; i < arms.Length; i++)
+        {
+            if(arms[i].Team != null)
+                arms[i].Team.RemoveMember(arms[i]);
+            arms[i].SetCommand(fristCmd, secondCmd, arms[i], fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, -1, -1, -1, -1);
+        }
+        m_TeamList.AddLast(new Team(arms));
+    }
+
     /// <summary>
     /// 设置指令
     /// </summary>

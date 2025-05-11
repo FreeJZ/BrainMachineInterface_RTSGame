@@ -7,5 +7,14 @@ using UnityEngine;
 /// </summary>
 public interface IAtkerInfo
 {
-    float AtkVal { get;}  
+    /// <summary>
+    /// ¹¥»÷Öµ
+    /// </summary>
+    float AtkVal { get;}
+    /// <summary>
+    /// ¹¥»÷Ä¿±ê
+    /// </summary>
+    Transform AtkTarget { get; set; }
+
+    Team Team { get; set; }
 }

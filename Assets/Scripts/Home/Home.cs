@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 营地类
 /// </summary>
-public class Home : MonoBehaviour, IHurt
+public class Home : MonoBehaviour, IHurt,IHurterInfo
 {
     public LayerMask layerMask;
     //回血半径
@@ -16,9 +16,14 @@ public class Home : MonoBehaviour, IHurt
                     private float cutTime;
     
     [SerializeField] private float hp;
-
+    public int maxAtCnt = 500;
     private List<ArmBase> arms;
     private Collider selfCol;
+
+    int IHurterInfo.MaxAtkCnt => maxAtCnt;
+
+    int IHurterInfo.CurAtkCnt { get; set; }
+
     private void Awake()
     {
         arms = new List<ArmBase>();

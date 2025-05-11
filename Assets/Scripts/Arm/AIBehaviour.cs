@@ -93,12 +93,12 @@ public abstract class AIBehaviour : MonoBehaviour,IAIInfo
     {
         //设置当前的指令
         CurCommand = fristCmd;
-        //标记被设置指令
-        isSetCommand = true;
         //处理Buffer
         BufferHandle.Handle(fristCmd, secondCmd, arm);
         //动态更新状态机
         StateLink(fristCmd, secondCmd,fristCmd2SecondCmdFlag,secondCmd2FristCmdFlag,searchPath2FcFlag,fc2SearchPathFlag,sreachPath2ScFlag,Sc2SreachPathFlag);
+        //标记被设置指令
+        isSetCommand = true;
     }
 
     private StateBase GetStateByCommand(E_Command cmd)

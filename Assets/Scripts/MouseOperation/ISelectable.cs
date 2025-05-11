@@ -8,5 +8,5 @@ public interface ISelectable
     Vector3 LeftPoint { get; }
     bool IsSelected { get; set; }
 
-    void SelectHighLight(Color color);
+    void SelectHighLight(bool isShow);
 }
