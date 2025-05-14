@@ -45,8 +45,8 @@ public class BattlePanelTwo : BattlePanelBase
     public override void OnArmEnsureClick()
     {
         base.OnArmEnsureClick();
-        this.HideMe();
-        //给选定的兵种执行相应的指令
+        UIMgr.Instance.HidePanel<BattlePanelTwo>();
+        UIMgr.Instance.ShowPanel<BattlePanelOne>();
 
 
     }
@@ -56,9 +56,6 @@ public class BattlePanelTwo : BattlePanelBase
     public override void OnArmCancelClick()
     {
         base.OnArmCancelClick();
-        this.HideMe();
-        //var panel = UIMgr.Instance.ShowPanel<BattlePanelOne>();
-        //if (panel != null&& panel.gameObject.activeSelf == false)
-        //    panel.ShowMe();
+        UIMgr.Instance.HidePanel<BattlePanelTwo>();
     }
 }
