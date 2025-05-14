@@ -57,8 +57,8 @@ public class BattlePanelTwo : BattlePanelBase
     {
         base.OnArmCancelClick();
         this.HideMe();
-        var panel = UIMgr.Instance.ShowPanel<BattlePanelOne>();
-        if (panel != null&& panel.gameObject.activeSelf == false)
-            panel.ShowMe();
+        //var panel = UIMgr.Instance.ShowPanel<BattlePanelOne>();
+        //if (panel != null&& panel.gameObject.activeSelf == false)
+        //    panel.ShowMe();
     }
 }
