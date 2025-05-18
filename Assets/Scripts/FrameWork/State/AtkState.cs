@@ -16,16 +16,18 @@ public class AtkState : StateBase
     }
     public override void Enter()
     {
-        Debug.Log("AtkEnter");
+        StateMachine.AIInfo.AtkStateEnter();
     }
 
     public override void Update()
     {
+        StateMachine.AIInfo.AtkStateUpdate();
         base.Update();
     }
 
     public override void Exit()
     {
+        StateMachine.AIInfo.AtkStateExit();
     }
 
 }

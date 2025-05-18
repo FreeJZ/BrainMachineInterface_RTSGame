@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 public class SearchPathState : StateBase
 {
     public SearchPathState() { }
@@ -8,20 +9,22 @@ public class SearchPathState : StateBase
     {
         base.Init(stateMachine);
 
-        AddTransilation(typeof(IdleState), () =>
+        AddTransilation(typeof(IdleState), (flag) =>
         {
-            return StateMachine.AIInfo.IsIdle;
-        });
+            return false;
+        },0);
     }
     public override void Enter()
     {
-        Debug.Log("SerachPathEnter");
+        StateMachine.AIInfo.SearchPathStateEnter();
     }
     public override void Update()
     {
+        StateMachine.AIInfo.SearchPathStateUpdate();
         base.Update();
     }
     public override void Exit()
     {
+        StateMachine.AIInfo.SearchPathStateExit();
     }
 }

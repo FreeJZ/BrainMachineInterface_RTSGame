@@ -8,7 +8,6 @@ public class TestArm : ArmBase
         base.Update();
         if(!isDie && Input.GetKeyDown(KeyCode.V))
         {
-           EventCenter.Instance.Invoke("Team" + team.ID, this as ArmBase);
            Debug.Log("死亡");
            isDie = true;
         }

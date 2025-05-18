@@ -15,7 +15,7 @@ public class UIMgr : Singleton<UIMgr>
     private UIMgr()
     {
         //动态生成Canvas预设体
-        GameObject canvas = GameObjFactory.Instance.GetItem(ResPathConfig.UIPath + "Canvas");
+        GameObject canvas = GameObjFactory.Instance.GetItem(ResPathConfig.UIPrefabPath + "Canvas");
         GameObject.DontDestroyOnLoad(canvas);
         canvasTrans = canvas.transform;
     }
@@ -27,7 +27,7 @@ public class UIMgr : Singleton<UIMgr>
     public void ShowPanel<T>()
     {
         if (panelDic.ContainsKey(typeof(T))) return;
-        GameObject panel = GameObjFactory.Instance.GetItem(ResPathConfig.UIPath + typeof(T).Name);
+        GameObject panel = GameObjFactory.Instance.GetItem(ResPathConfig.UIPrefabPath + typeof(T).Name);
         panel.transform.SetParent(canvasTrans, false);
         PanelBase panelBase = panel.GetComponent<PanelBase>();
         panelDic.Add(typeof(T),panelBase);

@@ -1,0 +1,7 @@
+[
+{"cmdType":1,"flag":0,"tip":"当自身生命值上升到90%"},
+{"cmdType":1,"flag":1,"tip":"当自身生命值上升到80%"},
+{"cmdType":1,"flag":2,"tip":"条件3"},
+{"cmdType":2,"flag":3,"tip":"条件4"},
+{"cmdType":2,"flag":4,"tip":"条件5"}
+]

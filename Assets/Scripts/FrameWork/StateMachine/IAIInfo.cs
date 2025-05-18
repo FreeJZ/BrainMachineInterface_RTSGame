@@ -6,35 +6,45 @@ using UnityEngine;
 /// 获取状态机使用者的 一些属性信息
 /// </summary>
 public interface IAIInfo 
-{ 
-    /// <summary>
-    /// 是否攻击
-    /// </summary>
-    bool IsAtk { get; }
-    /// <summary>
-    /// 是否撤退
-    /// </summary>
-    bool IsBack { get; }
-    /// <summary>
-    /// 是否防御
-    /// </summary>
-    bool IsDefence { get; }
-    /// <summary>
-    /// 是否迂回
-    /// </summary>
-    bool IsYuHui {  get; }
-    /// <summary>
-    /// 是否侦查
-    /// </summary>
-    bool IsCheck { get; }
-    /// <summary>
-    /// 是否寻路
-    /// </summary>
-    bool IsSerachPath { get; }
-    /// <summary>
-    /// 是否待机
-    /// </summary>
-    bool IsIdle { get; }
+{
+    E_Command CurCommand { get; set; }
+    bool IsSetCommand { get; }
+    bool SearchPathToAtk(int flag);
+    bool SearchPathToDefence(int flag);  
+    bool SearchPathToBack(int flag);
+    bool SearchPathToYuHui(int flag);
+    bool SearchPathToCheck(int flag);
+
+    bool AtkToSreachPath(int flag);
+    bool AtkToDefence(int flag);
+    bool AtkToBack(int flag);
+    bool AtkToYuHui(int flag);
+    bool AtkToCheck(int flag);
+
+    bool DefenceToSearchPath(int flag);
+    bool DefenceToAtk(int flag);
+    bool DefenceToBack(int flag);
+    bool DefenceToYuHui(int flag); 
+    bool DefenceToCheck(int flag);
+
+    bool BackToSreachPath(int flag);
+    bool BackToAtk(int flag);   
+    bool BackToDefence(int flag);
+    bool BackToYuHui(int flag);
+    bool BackToCheck(int flag);
+
+    bool YuHuiToSreachPath(int flag);
+    bool YuHuiToAtk(int flag);
+    bool YuHuiToDefence(int flag);  
+    bool YuHuiToBack(int flag);
+    bool YuHuiToCheck(int flag);
+
+    bool CheckToSreachPath(int flag);
+    bool CheckToAtk(int flag);
+    bool CheckToDefence(int flag);
+    bool CheckToBack(int flag);
+    bool CheckToYuHui(int flag);
+
     /// <summary>
     /// 切换动画
     /// </summary>
@@ -46,5 +56,68 @@ public interface IAIInfo
     /// <param name="targetNormalizedTime">监听的目标时间（动画的播放进度[0,1])</param>
     /// <returns></returns>
     bool AnimationListener(string curAniimationName, float targetNormalizedTime);
+
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateUpdate();
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateEnter();
+    //攻击状态回调函数 书写具体逻辑
+    void AtkStateExit();
+
+
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateUpdate();
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateEnter();
+    //撤退状态回调函数 书写具体逻辑
+    void BackStateExit();
+
+
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateUpdate();
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateEnter();
+    //防御状态回调函数 书写具体逻辑
+    void DefenceStateExit();
+
+
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateUpdate();
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateEnter();
+    //迂回状态回调函数 书写具体逻辑
+    void YuHuiStateExit();
+
+
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateUpdate();
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateEnter();
+    //侦查状态回调函数 书写具体逻辑
+    void CheckStateExit();
+
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateUpdate();
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateEnter();
+    //寻路状态回调函数 书写具体逻辑
+    void SearchPathStateExit();
+
+
+
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateUpdate();
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateEnter();
+    //待机状态回调函数 书写具体逻辑
+    void IdleStateExit();
+   
+
+    //死亡状态回调函数 书写具体逻辑
+    void DeadStateUpdate();
+    //死亡状态回调函数 书写具体逻辑
+    void DeadStateEnter();
+    //死亡状态回调函数 书写具体逻辑
+    void DeadStateExit();
 
 }

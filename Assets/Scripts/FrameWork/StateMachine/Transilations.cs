@@ -10,11 +10,11 @@ using UnityEngine;
 public class Transilations 
 {
     private StateMachine stateMachine;
-    private Dictionary<Type, Func<bool>> transDic;
+    private Dictionary<Type, KeyValuePair<Func<int,bool>,int>> transDic;
 
     public Transilations(StateMachine stateMachine)
     {
-        transDic = new Dictionary<Type, Func<bool>>();
+        transDic = new Dictionary<Type, KeyValuePair<Func<int, bool>, int>>();
         this.stateMachine = stateMachine;
     }
 
@@ -23,12 +23,13 @@ public class Transilations
     /// </summary>
     /// <param name="toStateType">目标状态类型</param>
     /// <param name="invokEvent">启动转换的事件</param>
-    public void AddTransilation(Type toStateType,Func<bool> invokEvent)
+    /// <param name="invokeFlag">传入invokeEvent的参数</param>
+    public void AddTransilation(Type toStateType,Func<int,bool> invokEvent,int invokeFlag)
     {
         if (toStateType == null || invokEvent == null) Debug.Log("无效操作,参数为null");
         if(!transDic.ContainsKey(toStateType))
         {
-            transDic.Add(toStateType, invokEvent);
+            transDic.Add(toStateType,new KeyValuePair<Func<int, bool>, int>(invokEvent, invokeFlag));
         }
     }
 
@@ -44,10 +45,10 @@ public class Transilations
         }
     }
 
-    public Func<bool> GetTransilation(Type toStateType)
+    public KeyValuePair<Func<int, bool>, int> GetTransilation(Type toStateType)
     {
         if(transDic.ContainsKey((Type)toStateType)) return transDic[toStateType];
-        return null;
+        return new KeyValuePair<Func<int, bool>, int>();
     }
 
     /// <summary>
@@ -58,14 +59,14 @@ public class Transilations
         transDic.Clear();
     }
     /// <summary>
-    /// 清空转换字典除了
+    /// 清空转换字典除了某个状态
     /// </summary>
     /// <param name="toStateType">出去的转换</param>
     public void ClearExcept(Type toStateType)
     {
-        Func<bool> invokEvent = GetTransilation(toStateType);
+        KeyValuePair<Func<int, bool>, int> invokEvent = GetTransilation(toStateType);
         Clear();
-        if(invokEvent != null) transDic.Add(toStateType,invokEvent);
+        if(invokEvent.Key != null) transDic.Add(toStateType,invokEvent);
     }
 
     /// <summary>
@@ -73,9 +74,9 @@ public class Transilations
     /// </summary>
     public void Update()
     {
-        foreach(KeyValuePair<Type, Func<bool>> pair in transDic)
+        foreach(KeyValuePair<Type, KeyValuePair<Func<int,bool>,int>> pair in transDic)
         {
-            if (pair.Value != null && pair.Value())
+            if (pair.Value.Key != null && pair.Value.Key(pair.Value.Value))
             {
                 stateMachine.ChangeState(pair.Key);
                 return;
