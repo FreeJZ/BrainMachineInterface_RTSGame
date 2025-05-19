@@ -2244,14 +2244,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseSlePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1953628631687112259, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264109147578113360, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3342751381036617991, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2332,56 +2324,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3758607563256959977, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952546709760776229, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: point1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952546709760776229, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: point2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3952546709760776229, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: checkLayerMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204827751544093729, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444075904005718928, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7179767515057508684, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-    - {fileID: 7331792715699374643, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-    - {fileID: 2264109147578113360, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
-    - {fileID: 8444075904005718928, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f9f9125d8e77c45a7bfb1cfdd005a1, type: 3}
