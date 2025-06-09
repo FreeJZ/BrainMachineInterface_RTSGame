@@ -25,7 +25,7 @@ public class ResOperationMgr : MonoSingleton<ResOperationMgr>
 
     public void AddTeam(E_Command fristCmd, E_Command secondCmd, int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag,params ArmBase[] arms)
     {
-        //ÒÆ³ıÖ®Ç°´æÔÚµÄĞ¡¶Ó
+        //ç§»é™¤ä¹‹å‰å­˜åœ¨çš„å°é˜Ÿ
         for(int i = 0; i < arms.Length; i++)
         {
             if(arms[i].Team != null)
@@ -36,15 +36,15 @@ public class ResOperationMgr : MonoSingleton<ResOperationMgr>
     }
 
     /// <summary>
-    /// ÉèÖÃÖ¸Áî
+    /// è®¾ç½®æŒ‡ä»¤
     /// </summary>
-    /// <param name="fristCmd">µÚÒ»Ö¸Áî</param>
-    /// <param name="secondCmd">µÚ¶şÖ¸Áî</param>
-    /// <param name="arm">±øÖÖ×ÔÉí</param>
-    /// <param name="fristCmd2SecondCmdFlag">Ö¸Áî1->Ö¸Áî2µÄ×ª»»Ìõ¼şµÄ±êÊ¶£¬Çø·ÖÊ¹ÓÃÄÄ¸ö×ª»»Ìõ¼ş</param>
-    /// <param name="secondCmd2FristCmdFlag">Ö¸Áî2->Ö¸Áî1...</param>
-    /// <param name="searchPath2FcFlag">Ñ°Â·->Ö¸Áî1...</param>
-    /// <param name="fc2SearchPathFlag">Ö¸Áî1->Ñ°Â·...</param>
+    /// <param name="fristCmd">ç¬¬ä¸€æŒ‡ä»¤</param>
+    /// <param name="secondCmd">ç¬¬äºŒæŒ‡ä»¤</param>
+    /// <param name="arm">å…µç§è‡ªèº«</param>
+    /// <param name="fristCmd2SecondCmdFlag">æŒ‡ä»¤1->æŒ‡ä»¤2çš„è½¬æ¢æ¡ä»¶çš„æ ‡è¯†ï¼ŒåŒºåˆ†ä½¿ç”¨å“ªä¸ªè½¬æ¢æ¡ä»¶</param>
+    /// <param name="secondCmd2FristCmdFlag">æŒ‡ä»¤2->æŒ‡ä»¤1...</param>
+    /// <param name="searchPath2FcFlag">å¯»è·¯->æŒ‡ä»¤1...</param>
+    /// <param name="fc2SearchPathFlag">æŒ‡ä»¤1->å¯»è·¯...</param>
     public void SetCommand(ArmBase arm,E_Command fristCmd, E_Command secondCmd,int fristCmd2SecondCmdFlag, int secondCmd2FristCmdFlag, int searchPath2FcFlag = -1, int fc2SearchPathFlag = -1, int sreachPath2ScFlag = -1, int Sc2SreachPathFlag = -1)
     {
         arm.SetCommand(fristCmd, secondCmd, arm,fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, searchPath2FcFlag, fc2SearchPathFlag,sreachPath2ScFlag,Sc2SreachPathFlag);
