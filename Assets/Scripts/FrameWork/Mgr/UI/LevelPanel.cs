@@ -16,6 +16,7 @@ public class LevelPanel : PanelBase
 
     protected void Awake()
     {
+        PlayerPrefs.SetInt(UnlockedLevelKey, 0); // HACK: 初始化已解锁关卡为0，实际使用时应移除此行
         // 读取已解锁的最大关卡索引
         unlockedLevel = PlayerPrefs.GetInt(UnlockedLevelKey, 0);
     }
