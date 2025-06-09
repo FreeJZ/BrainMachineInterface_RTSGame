@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 public class SetCommandPanel : PanelBase,IInvoker
 {
-    [Header("Ñ¡ÔñÖ¸ÁîµÄ°´¼ü")]
+    [Header("é€‰æ‹©æŒ‡ä»¤çš„æŒ‰é”®")]
     public RectTransform cmdBtnFather;
     public Button atkBtn;
     public Button defenceBtn;
@@ -14,12 +14,12 @@ public class SetCommandPanel : PanelBase,IInvoker
     public Button yuHuiBtn;
     public Button checkBtn;
     
-    [Header("Ñ¡Ôñ×ª»»Ìõ¼şµÄ°´¼ü")]
+    [Header("é€‰æ‹©è½¬æ¢æ¡ä»¶çš„æŒ‰é”®")]
     public RectTransform tslBtnFather;
     public Transform scollViewContainer;
 
     public Text tipContent;
-    [Header("Ñ¡ÔñÃæ°åTweener²ÎÊı")]
+    [Header("é€‰æ‹©é¢æ¿Tweenerå‚æ•°")]
     public float yStart;
     public float yEnd;
     public float optionsShowDuratoin;
@@ -58,7 +58,7 @@ public class SetCommandPanel : PanelBase,IInvoker
         asInvoker = this as IInvoker;
         asInvoker.Init();
 
-        //Ìí¼ÓÃüÁî
+        //æ·»åŠ å‘½ä»¤
         AddCmd(new SelectCmd1(this));
         AddCmd(new SelectCmd2(this));
         //AddCmd(new SelectTsl_SreachPath2FirstCmd(this));
@@ -79,15 +79,15 @@ public class SetCommandPanel : PanelBase,IInvoker
         base.Update();
         if(asInvoker.Exute())
         {
-            //ÉèÖÃ±øÖÖÖ¸Áî
+            //è®¾ç½®å…µç§æŒ‡ä»¤
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 List<ArmBase> arms = SelectionObjMgr.Instance.ArmBaseList;
                 ResOperationMgr.Instance.AddTeam(firstCmd, secondCmd, fristCmd2SecondCmdFlag, secondCmd2FristCmdFlag, arms.ToArray());
                 SelectionObjMgr.Instance.Clear();
             }
-            //ÇĞ»»Ãæ°å
-            Debug.Log("ÃüÁîÖ´ĞĞÍê³É£¬ÇĞ»»Ãæ°å");
+            //åˆ‡æ¢é¢æ¿
+            Debug.Log("å‘½ä»¤æ‰§è¡Œå®Œæˆï¼Œåˆ‡æ¢é¢æ¿");
         }
     }
 
@@ -108,7 +108,7 @@ public class SetCommandPanel : PanelBase,IInvoker
 
 }
 
-//Óë¸ÃÃæ°åÓĞ¹ØµÄÃüÁî
+//ä¸è¯¥é¢æ¿æœ‰å…³çš„å‘½ä»¤
 
 public class SelectCmd1 : ComandBase
 {
@@ -127,7 +127,7 @@ public class SelectCmd1 : ComandBase
         panel.checkBtn.onClick.AddListener(CheckBtnEvent);
         panel.yuHuiBtn.onClick.AddListener(YuHuiBtnEvent);
         panel.cmdBtnFather.DOMoveY(panel.yEnd, panel.optionsShowDuratoin);
-        panel.tipContent.text = "Ñ¡ÔñµÚÒ»Ö¸Áî";
+        panel.tipContent.text = "é€‰æ‹©ç¬¬ä¸€æŒ‡ä»¤";
     }
 
     public override bool Excute()
@@ -197,7 +197,7 @@ public class SelectCmd2 : ComandBase
         panel.checkBtn.onClick.AddListener(CheckBtnEvent);
         panel.yuHuiBtn.onClick.AddListener(YuHuiBtnEvent);
         panel.cmdBtnFather.DOMoveY(panel.yEnd, panel.optionsShowDuratoin);
-        panel.tipContent.text = "Ñ¡ÔñµÚ¶şÖ¸Áî";
+        panel.tipContent.text = "é€‰æ‹©ç¬¬äºŒæŒ‡ä»¤";
     }
 
     public override bool Excute()
@@ -261,9 +261,9 @@ public abstract class SelectTranslationBaseCmd : ComandBase
     public override void Enter()
     {
 
-        //¶ÁÈ¡ÅäÖÃÊı¾İ
+        //è¯»å–é…ç½®æ•°æ®
         TslData data = ReadData(out E_Command fromCmd);
-        //Éú³É°´Å¥
+        //ç”ŸæˆæŒ‰é’®
         for (int i = 0; i < data.pairsList.Count; i++)
         {
             Pair pair = data.pairsList[i];
@@ -279,7 +279,7 @@ public abstract class SelectTranslationBaseCmd : ComandBase
             
             obj.transform.SetParent(panel.scollViewContainer, false);
 
-            //×¢²áµã»÷ÊÂ¼ş
+            //æ³¨å†Œç‚¹å‡»äº‹ä»¶
             obj.GetComponent<Button>().onClick.AddListener(() =>
             {
                 TslBtnInfo info = tslBtnInfo;
@@ -296,7 +296,7 @@ public abstract class SelectTranslationBaseCmd : ComandBase
 
     public override void Exit(UnityAction action)
     {
-        //É¾³ı°´Å¥
+        //åˆ é™¤æŒ‰é’®
         Button[] btns = panel.scollViewContainer.GetComponentsInChildren<Button>();
         for(int i = 0;i<btns.Length;i++)
         {
@@ -309,7 +309,7 @@ public abstract class SelectTranslationBaseCmd : ComandBase
         havaBtnClick = false;
     }
 
-    //ÖØĞ´¸³ÖµpanelµÄflagÖµ
+    //é‡å†™èµ‹å€¼panelçš„flagå€¼
     protected virtual void BtnClickEvent(int flag)
     { 
         havaBtnClick = true;
@@ -328,7 +328,7 @@ public class SelectTsl_SreachPath2FirstCmd : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "Ñ¡ÔñÑ°Â·µ½µÚÒ»Ö¸ÁîµÄ×ª»»";
+        panel.tipContent.text = "é€‰æ‹©å¯»è·¯åˆ°ç¬¬ä¸€æŒ‡ä»¤çš„è½¬æ¢";
     }
 
     protected override TslData ReadData(out E_Command fromCmd)
@@ -351,7 +351,7 @@ public class SelectTsl_FirstCmd2SreachPath : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "Ñ¡ÔñµÚÒ»Ö¸Áîµ½Ñ°Â·µÄ×ª»»";
+        panel.tipContent.text = "é€‰æ‹©ç¬¬ä¸€æŒ‡ä»¤åˆ°å¯»è·¯çš„è½¬æ¢";
     }
 
     protected override TslData ReadData(out E_Command fromCmd)
@@ -374,7 +374,7 @@ public class SelectTsl_FirstCmd2SecondCmd : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = $"Ñ¡Ôñ{panel.firstCmd}µ½{panel.secondCmd}µÄ×ª»»";
+        panel.tipContent.text = $"é€‰æ‹©{panel.firstCmd}åˆ°{panel.secondCmd}çš„è½¬æ¢";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {
@@ -396,7 +396,7 @@ public class SelectTsl_SecondCmd2FirstCmd: SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = $"Ñ¡Ôñ{panel.secondCmd}µ½{panel.firstCmd}µÄ×ª»»";
+        panel.tipContent.text = $"é€‰æ‹©{panel.secondCmd}åˆ°{panel.firstCmd}çš„è½¬æ¢";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {
@@ -419,7 +419,7 @@ public class SelectTsl_SreachPath2SecondCmd : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "Ñ¡ÔñÑ°Â·µ½µÚ¶şÖ¸ÁîµÄ×ª»»";
+        panel.tipContent.text = "é€‰æ‹©å¯»è·¯åˆ°ç¬¬äºŒæŒ‡ä»¤çš„è½¬æ¢";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {
@@ -441,7 +441,7 @@ public class SelectTsl_SecondCmd2SreachPath : SelectTranslationBaseCmd
     public override void Enter()
     {
         base.Enter();
-        panel.tipContent.text = "Ñ¡ÔñµÚ¶şÖ¸Áîµ½Ñ°Â·µÄ×ª»»";
+        panel.tipContent.text = "é€‰æ‹©ç¬¬äºŒæŒ‡ä»¤åˆ°å¯»è·¯çš„è½¬æ¢";
     }
     protected override TslData ReadData(out E_Command fromCmd)
     {

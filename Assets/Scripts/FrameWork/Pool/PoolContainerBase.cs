@@ -5,20 +5,20 @@ using UnityEngine;
 public abstract class PoolContainerBase
 {
     protected string name;
-    //存放未使用物品的容器
+    //瀛樻斁鏈娇鐢ㄧ墿鍝佺殑瀹瑰櫒
     protected Stack<Object> waitItems;
-    //存放使用中的物品
+    //瀛樻斁浣跨敤涓殑鐗╁搧
     protected List<Object> usingItems;
-    //容器容量
+    //瀹瑰櫒瀹归噺
     protected int capacity;
 
     protected Transform level;
 
 
     public Transform Level => level;
-    //容器容量
+    //瀹瑰櫒瀹归噺
     public int Capacity { get => capacity; }
-    //物品容量
+    //鐗╁搧瀹归噺
     public int Count { get => waitItems.Count + usingItems.Count; }
 
     public PoolContainerBase(string name, int capacity = 10)

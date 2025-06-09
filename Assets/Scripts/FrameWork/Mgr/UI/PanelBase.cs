@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 /// <summary>
-/// Ãæ°å»ùÀà
-/// ËùÓĞÃæ°å¼Ì³Ğ¸ÃÀà,×¢Òâ£ºÃæ°åµÄgameObject.name == ×Ô¶¨ÒåµÄÀàÃû
+/// é¢æ¿åŸºç±»
+/// æ‰€æœ‰é¢æ¿ç»§æ‰¿è¯¥ç±»,æ³¨æ„ï¼šé¢æ¿çš„gameObject.name == è‡ªå®šä¹‰çš„ç±»å
 /// </summary>
 public class PanelBase : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("µ­Èëµ­³öËÙ¶È")]
+    [Tooltip("æ·¡å…¥æ·¡å‡ºé€Ÿåº¦")]
     private float fadeSpeed = 1;
     private bool toShow;
     private bool toHide;
@@ -44,9 +44,9 @@ public class PanelBase : MonoBehaviour
     }
 
     /// <summary>
-    /// Òş²Ø×Ô¼º
+    /// éšè—è‡ªå·±
     /// </summary>
-    /// <param name="action">ÍêÈ«Òş²ØºóµÄÊÂ¼ş</param>
+    /// <param name="action">å®Œå…¨éšè—åçš„äº‹ä»¶</param>
     public void HideMe(UnityAction action = null)
     {
         toHide = true;
@@ -54,7 +54,7 @@ public class PanelBase : MonoBehaviour
         canvasGroup.alpha = 1;
     }
     /// <summary>
-    /// ÏÔÊ¾×Ô¼º
+    /// æ˜¾ç¤ºè‡ªå·±
     /// </summary>
     public void ShowMe()
     {

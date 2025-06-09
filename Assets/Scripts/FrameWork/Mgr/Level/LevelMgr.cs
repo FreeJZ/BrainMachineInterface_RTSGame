@@ -7,10 +7,10 @@ public class LevelMgr : Singleton<LevelMgr>
     private LevelData levelData;
     public LevelData LevelData => levelData;
 
-    //ÎÒ·½ÓªµØÊÇ·ñËÀÍö
+    //æˆ‘æ–¹è¥åœ°æ˜¯å¦æ­»äº¡
     private bool homeIsDead;
     public bool HomeIsDead => homeIsDead;
-    //µØ·½ÓªµØÊÇ·ñËÀÍö
+    //åœ°æ–¹è¥åœ°æ˜¯å¦æ­»äº¡
     private bool enmyIsDead;
     public bool EnmyIsDead => enmyIsDead;
     private LevelMgr()
@@ -30,7 +30,7 @@ public class LevelMgr : Singleton<LevelMgr>
         EventCenter.Instance.RemoveEventListener("SetLevelData_setEnmyState");
     }
     /// <summary>
-    /// ÉèÖÃÎÒ·½ÓªµØ×´Ì¬µÄ»Øµ÷º¯Êı
+    /// è®¾ç½®æˆ‘æ–¹è¥åœ°çŠ¶æ€çš„å›è°ƒå‡½æ•°
     /// </summary>
     /// <param name="state"></param>
     private void SetHomeIsDead(bool state)
@@ -38,7 +38,7 @@ public class LevelMgr : Singleton<LevelMgr>
         homeIsDead = state;
     }
     /// <summary>
-    /// ÉèÖÃµØ·½ÓªµØ×´Ì¬µÄ»Øµ÷º¯Êı
+    /// è®¾ç½®åœ°æ–¹è¥åœ°çŠ¶æ€çš„å›è°ƒå‡½æ•°
     /// </summary>
     /// <param name="state"></param>
     private void SetEnmyIsDead(bool state)
@@ -47,20 +47,20 @@ public class LevelMgr : Singleton<LevelMgr>
     }
 
     /// <summary>
-    /// ¹Ø¿¨×´Ì¬»Øµ÷º¯Êı
+    /// å…³å¡çŠ¶æ€å›è°ƒå‡½æ•°
     /// </summary>
     private void LevelStateUpdate()
     {
         if(homeIsDead)
         {
-            //ÏÔÊ¾ÌáÊ¾Ãæ°å Ê§°Ü
-            Debug.Log("ÓÎÏ·Ê§°Ü");
+            //æ˜¾ç¤ºæç¤ºé¢æ¿ å¤±è´¥
+            Debug.Log("æ¸¸æˆå¤±è´¥");
         }
 
         if(EnmyIsDead)
         {
-            //ÏÔÊ¾ÌáÊ¾Ãæ°å Ê¤Àû
-            Debug.Log("ÓÎÏ·Ê¤Àû");
+            //æ˜¾ç¤ºæç¤ºé¢æ¿ èƒœåˆ©
+            Debug.Log("æ¸¸æˆèƒœåˆ©");
         }
     }
 
