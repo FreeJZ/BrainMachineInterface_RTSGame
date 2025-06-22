@@ -16,7 +16,7 @@ public class LevelPanel : PanelBase
 
     protected void Awake()
     {
-        PlayerPrefs.SetInt(UnlockedLevelKey, 0); // HACK: 初始化已解锁关卡为0，实际使用时应移除此行
+        PlayerPrefs.SetInt(UnlockedLevelKey, 0);// HACK: 初始化已解锁关卡为0，实际使用时应移除此行
         // 读取已解锁的最大关卡索引
         unlockedLevel = PlayerPrefs.GetInt(UnlockedLevelKey, 0);
     }
@@ -36,7 +36,7 @@ public class LevelPanel : PanelBase
 
         btnPass.onClick.AddListener(() =>
         {
-            // 模拟通关逻辑
+            // REVIEW:模拟通关逻辑
             int currentLevel = unlockedLevel; // 假设当前关卡就是已解锁的最大关卡
             UnlockNextLevel(currentLevel);
         });
