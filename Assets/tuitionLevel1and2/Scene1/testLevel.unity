@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -181,6 +181,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -290,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -336,6 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (41)
@@ -364,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -409,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -512,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -558,6 +570,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (18)
@@ -586,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -631,6 +647,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -723,7 +743,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -767,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -813,6 +833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (23)
@@ -841,7 +865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -887,6 +911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (51)
@@ -915,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -960,6 +988,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -1052,7 +1084,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1243,7 +1275,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: dc21403ef6c7a93419877afeccf54eb7, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -1387,7 +1419,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1431,7 +1463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -1476,6 +1508,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -1568,7 +1604,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1612,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -1658,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (42)
@@ -1686,7 +1726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -1732,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (3)
@@ -1760,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -1805,6 +1849,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -1897,7 +1945,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2003,7 +2051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -2049,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (13)
@@ -2077,7 +2129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -2123,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (22)
@@ -2151,7 +2207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -2197,6 +2253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (27)
@@ -2221,6 +2281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2305,6 +2366,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &706686866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2469,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -2475,7 +2559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2519,7 +2603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -2564,6 +2648,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -2656,7 +2744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2700,7 +2788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -2745,6 +2833,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -2837,7 +2929,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2947,7 +3039,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: dc21403ef6c7a93419877afeccf54eb7, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -3099,7 +3191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3143,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -3189,6 +3281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (52)
@@ -3217,7 +3313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -3263,6 +3359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (45)
@@ -3291,7 +3391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -3336,6 +3436,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -3431,7 +3535,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -3583,7 +3687,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3627,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -3672,6 +3776,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -3793,7 +3901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -3838,6 +3946,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -3913,7 +4025,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4035,7 +4147,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4079,7 +4191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4125,6 +4237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (16)
@@ -4153,7 +4269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4199,6 +4315,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (31)
@@ -4213,6 +4333,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
   m_PrefabInstance: {fileID: 1140490255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1148599651
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_Name
+      value: ToonSoldier_demo
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 298.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 712.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6acf3f29c109e4439950c8f6a85cb2b, type: 3}
 --- !u!1001 &1167632687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4227,7 +4404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4273,6 +4450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (26)
@@ -4301,7 +4482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4347,6 +4528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (39)
@@ -4375,7 +4560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4420,6 +4605,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -4512,7 +4701,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4556,7 +4745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4601,6 +4790,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -4807,7 +5000,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4851,7 +5044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4897,6 +5090,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (17)
@@ -4925,7 +5122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -4970,6 +5167,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -5084,7 +5285,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5206,7 +5407,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5250,7 +5451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5296,6 +5497,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (25)
@@ -5324,7 +5529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5369,6 +5574,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -5460,7 +5669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5506,6 +5715,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (5)
@@ -5534,7 +5747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5579,6 +5792,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -5674,7 +5891,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: dc21403ef6c7a93419877afeccf54eb7, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -5701,7 +5918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5747,6 +5964,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (33)
@@ -5775,7 +5996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -5820,6 +6041,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -5972,7 +6197,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: dc21403ef6c7a93419877afeccf54eb7, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -6062,7 +6287,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6106,7 +6331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6151,6 +6376,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -6243,7 +6472,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6324,7 +6553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6370,6 +6599,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (47)
@@ -6398,7 +6631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6444,6 +6677,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (28)
@@ -6472,7 +6709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6518,6 +6755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (46)
@@ -6546,7 +6787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6592,6 +6833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (1)
@@ -6620,7 +6865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6666,6 +6911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (15)
@@ -6694,7 +6943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6740,6 +6989,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (19)
@@ -6768,7 +7021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -6813,6 +7066,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -7016,7 +7273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -7062,6 +7319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (2)
@@ -7090,7 +7351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -7136,6 +7397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (35)
@@ -7164,7 +7429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -7210,6 +7475,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1 (49)
@@ -7238,7 +7507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -7283,6 +7552,10 @@ PrefabInstance:
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
@@ -7483,7 +7756,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7679,7 +7952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049999997
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_LocalScale.z
@@ -7725,6 +7998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4703129928018821584, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458562297416981858, guid: 873c5912f88fdde40997751ef3215a29, type: 3}
       propertyPath: m_Name
       value: tree1
@@ -7759,3 +8036,4 @@ SceneRoots:
   - {fileID: 67462810}
   - {fileID: 1995911234}
   - {fileID: 248752395}
+  - {fileID: 1148599651}
