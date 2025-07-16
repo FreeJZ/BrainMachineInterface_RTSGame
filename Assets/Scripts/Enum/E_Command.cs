@@ -5,27 +5,27 @@ using UnityEngine;
 public enum E_Command
 {
     /// <summary>
-    /// Ñ°Â·
+    /// å¯»è·¯
     /// </summary>
     sreachPath,
     /// <summary>
-    /// ¹¥»÷
+    /// æ”»å‡»
     /// </summary>
     rush,
     /// <summary>
-    /// ³·ÍË
+    /// æ’¤é€€
     /// </summary>
     back,
     /// <summary>
-    /// Õì²é
+    /// ä¾¦æŸ¥
     /// </summary>
     check,
     /// <summary>
-    /// ÓØ»Ø
+    /// è¿‚å›ž
     /// </summary>
     yuhui,
     /// <summary>
-    /// ·ÀÓù
+    /// é˜²å¾¡
     /// </summary>
     defence
 }
