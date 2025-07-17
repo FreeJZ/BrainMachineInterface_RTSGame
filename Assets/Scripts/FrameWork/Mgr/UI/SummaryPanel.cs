@@ -19,11 +19,11 @@ public class SummaryPanel : PanelBase
         //判断胜利失败
          if (true) //条件
          {
-             _icontext.text = "胜利";
+             _icontext.text = "模拟演算成功";
          }
          else
          {
-             _icontext.text = "失败";
+             _icontext.text = "模拟演算失败";
          }
         
         //得到游戏信息

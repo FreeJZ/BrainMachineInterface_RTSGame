@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 7570781061766981593}
   - component: {fileID: 4727636909352512977}
   m_Layer: 5
-  m_Name: ww
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2020,6 +2020,7 @@ GameObject:
   - component: {fileID: 7146203752108470585}
   - component: {fileID: 8183577980366113498}
   - component: {fileID: 1085885063130008212}
+  - component: {fileID: 547038608386657885}
   m_Layer: 5
   m_Name: SummaryPanel
   m_TagString: Untagged
@@ -2085,6 +2086,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &547038608386657885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313716992621741461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcad6f99ae236e4380f03824b528185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 4.77
+  gameInfo: {fileID: 3836065781768995623}
+  icon: {fileID: 4727636909352512977}
 --- !u!1 &5401791508871244026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,7 +2827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6218\u6597\u7ED3\u7B97"
+  m_Text: "\u6F14\u7B97\u7ED3\u679C"
 --- !u!1 &7139505752589154865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3357,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3352,7 +3368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u80DC\u5229"
+  m_Text: "\u6A21\u62DF\u6F14\u7B97\u6210\u529F"
 --- !u!1 &9220558405348651347
 GameObject:
   m_ObjectHideFlags: 0
