@@ -4,10 +4,7 @@ using System.Collections.Generic;
 
 public class LevelPanel : PanelBase
 {
-    public Button btnStart;
     public List<Button> levelButtons;
-    public Button btnExit;
-    private LineRenderer _line;
     
     public Button btnPass; // 通关按钮
 
@@ -23,16 +20,6 @@ public class LevelPanel : PanelBase
 
     protected void AddButtonListeners()
     {
-        btnStart.onClick.AddListener(() =>
-        {
-           //TODO:开始按钮逻辑
-            
-        });
-
-        btnExit.onClick.AddListener(() =>
-        {
-            // TODO:退出按钮逻辑
-        });
 
         btnPass.onClick.AddListener(() =>
         {
@@ -46,20 +33,6 @@ public class LevelPanel : PanelBase
     {
        
         AddButtonListeners();
-        
-        // 初始化LineRenderer
-        var lineObj = new GameObject("LevelLines");
-        // 关键：不要作为Canvas子物体，直接放到场景根节点
-        lineObj.transform.SetParent(null);
-        _line = lineObj.AddComponent<LineRenderer>();
-        
-        // 设置LineRenderer属性
-        _line.startWidth = 1f; // UI空间下需要更大的宽度
-        _line.endWidth = 1f;
-        _line.startColor = Color.yellow; // 使用黄色便于观察
-        _line.endColor = Color.yellow;
-        _line.material = new Material(Shader.Find("Sprites/Default"));
-        _line.sortingOrder = 1;
 
         // 刷新关卡按钮状态
         RefreshLevelButtons();
@@ -67,15 +40,7 @@ public class LevelPanel : PanelBase
 
     protected override void Update()
     {
-        _line.positionCount = levelButtons.Count;
-        for (int i = 0; i < levelButtons.Count; i++)
-        {
-            RectTransform rectTransform = levelButtons[i].GetComponent<RectTransform>();
-            Vector3 worldPos = rectTransform.position;
-            worldPos.z = worldPos.z+0.7f;
-            
-            _line.SetPosition(i, worldPos);
-        }
+        
     }
 
     private void RefreshLevelButtons()

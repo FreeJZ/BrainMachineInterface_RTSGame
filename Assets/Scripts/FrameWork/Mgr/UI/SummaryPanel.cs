@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,9 @@ public class SummaryPanel : PanelBase
 {
     public GameObject gameInfo;
     public Image icon;
-
+    
+    public Button backButton;
+    public Button restartButton;
     
     private Text _gameInfotext;
     private Text _icontext;
@@ -47,6 +50,24 @@ public class SummaryPanel : PanelBase
     {
         _gameInfotext = gameInfo.GetComponentInChildren<Text>();
         _icontext = icon.gameObject.GetComponentInChildren<Text>();
+        
+        AddListenrs();
     }
-    
+
+
+    private void AddListenrs()
+    {
+        backButton.onClick.AddListener(BackButton);
+        restartButton.onClick.AddListener(RestartButton);
+    }
+
+    private void BackButton()
+    {
+        //TODO:回到关卡
+    }
+
+    private void RestartButton()
+    {
+        //TODO:重新开始
+    }
 }

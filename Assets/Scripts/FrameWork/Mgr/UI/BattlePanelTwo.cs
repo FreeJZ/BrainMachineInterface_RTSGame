@@ -5,42 +5,42 @@ using UnityEngine;
 public class BattlePanelTwo : BattlePanelBase
 {
     /// <summary>
-    /// 进攻按钮点击事件
+    /// 杩涙敾鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmBuBingClick()
     {
         base.OnArmBuBingClick();
     }
     /// <summary>
-    /// 撤退按钮点击事件
+    /// 鎾ら��鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmPaoBingClick()
     {
         base.OnArmPaoBingClick();
     }
     /// <summary>
-    /// 防御按钮点击事件
+    /// 闃插尽鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmZhuangJiaBingClick()
     {
         base.OnArmZhuangJiaBingClick();
     }
     /// <summary>
-    /// 侦察按钮点击事件
+    /// 渚﹀療鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmZhanDouJiClick()
     {
         base.OnArmZhanDouJiClick();
     }
     /// <summary>
-    /// 迂回按钮点击事件
+    /// 杩傚洖鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmWuRenJiClick()
     {
         base.OnArmWuRenJiClick();
     }
     /// <summary>
-    /// 确认按钮点击事件
+    /// 纭鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmEnsureClick()
     {
@@ -51,7 +51,7 @@ public class BattlePanelTwo : BattlePanelBase
 
     }
     /// <summary>
-    /// 取消按钮点击事件
+    /// 鍙栨秷鎸夐挳鐐瑰嚮浜嬩欢
     /// </summary>
     public override void OnArmCancelClick()
     {
