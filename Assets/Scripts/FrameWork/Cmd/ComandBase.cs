@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 /// <summary>
-/// 命令基类
+/// 鍛戒护鍩虹被
 /// </summary>
 public abstract class ComandBase 
 {

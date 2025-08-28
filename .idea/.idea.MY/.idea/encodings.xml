@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/Assets/Editor/ExcelToJson/ExcelToolEditorWindow.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Arm/ArmBase.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Enum/E_Command.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/FrameWork/Cmd/ComandBase.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/FrameWork/Cmd/IInvoker.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/FrameWork/Mgr/Level/LevelMgr.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/FrameWork/Mgr/ResOperationMgr/ResOperationMgr.cs" charset="UTF-8" />
