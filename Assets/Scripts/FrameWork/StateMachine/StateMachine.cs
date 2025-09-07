@@ -6,8 +6,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
-/// ×´Ì¬»ú
-/// ³õÊ¼»¯×´Ì¬Îªnull£¬Ê¹ÓÃÊ±ĞèÔÚ¿ªÊ¼Ê±µ÷ÓÃChangeStateº¯Êı½øÈë¿ªÊ¼×´Ì¬
+/// çŠ¶æ€æœº
+/// åˆå§‹åŒ–çŠ¶æ€ä¸ºnullï¼Œä½¿ç”¨æ—¶éœ€åœ¨å¼€å§‹æ—¶è°ƒç”¨ChangeStateå‡½æ•°è¿›å…¥å¼€å§‹çŠ¶æ€
 /// </summary>
 public class StateMachine
 {
@@ -26,9 +26,9 @@ public class StateMachine
     }
 
     /// <summary>
-    /// ×ª»»×´Ì¬
+    /// è½¬æ¢çŠ¶æ€
     /// </summary>
-    /// <typeparam name="T">×´Ì¬ÀàÃû</typeparam>
+    /// <typeparam name="T">çŠ¶æ€ç±»å</typeparam>
     public void ChangeState<T>() where T : StateBase
     {
         T nextState = default(T);
@@ -57,7 +57,7 @@ public class StateMachine
 
     public void ChangeState(Type type)
     {
-        if (!typeof(StateBase).IsAssignableFrom(type)) Debug.LogError("type ±äÁ¿²»ÊÇStateBaseµÄÅÉÉúÀà");
+        if (!typeof(StateBase).IsAssignableFrom(type)) Debug.LogError("type å˜é‡ä¸æ˜¯StateBaseçš„æ´¾ç”Ÿç±»");
         StateBase nextState = null;
         if (curState == null)
         {
@@ -82,7 +82,7 @@ public class StateMachine
     }
      
     /// <summary>
-    /// µ÷ÓÃ¸Ãº¯ÊıÖ´ĞĞ×´Ì¬»úÖĞµÄ×´Ì¬Âß¼­
+    /// è°ƒç”¨è¯¥å‡½æ•°æ‰§è¡ŒçŠ¶æ€æœºä¸­çš„çŠ¶æ€é€»è¾‘
     /// </summary>
     public void Update()
     {
@@ -103,7 +103,7 @@ public class StateMachine
 
     public StateBase GetState(Type type)
     {
-        if (!typeof(StateMachine).IsAssignableFrom(type)) Debug.LogError("type ²»ÊÇ StateBase µÄÅÉÉúÀà");
+        if (!typeof(StateMachine).IsAssignableFrom(type)) Debug.LogError("type ä¸æ˜¯ StateBase çš„æ´¾ç”Ÿç±»");
         if(stateDic.ContainsKey(type)) return stateDic[type];
         
         StateBase state = null;

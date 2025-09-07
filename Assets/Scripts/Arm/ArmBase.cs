@@ -31,7 +31,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
 
     public Team Team { get; set; }
 
-    #region ISelectable½Ó¿ÚµÄÄÚÈİ
+    #region ISelectableæ¥å£çš„å†…å®¹
     public virtual Vector3 BottomPoint => transform.position + Vector3.down*GetComponent<CapsuleCollider>().height/2;
 
     public virtual Vector3 TopPoint => transform.position + Vector3.up * GetComponent<CapsuleCollider>().height/2;
@@ -48,9 +48,9 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     }
     #endregion
 
-    #region IAIInfo½Ó¿ÚµÄÄÚÈİ
+    #region IAIInfoæ¥å£çš„å†…å®¹
 
-    //Ñ°Â·µ½ÆäËûµÄ×ª»»
+    //å¯»è·¯åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool SearchPathToAtk(int flag)
     {
         return false;
@@ -76,7 +76,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //¹¥»÷µ½ÆäËûµÄ×ª»»
+    //æ”»å‡»åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool AtkToSreachPath(int flag)
     {
         return false;
@@ -115,7 +115,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     {
         return false;
     }
-    //·ÀÓùµ½ÆäËûµÄ×ª»»
+    //é˜²å¾¡åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool DefenceToSearchPath(int flag)
     {
         throw new NotImplementedException();
@@ -141,7 +141,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //³·ÍËµ½ÆäËûµÄ×ª»»
+    //æ’¤é€€åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool BackToSreachPath(int flag)
     {
         return false;
@@ -167,7 +167,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //ÓØ»Øµ½ÆäËûµÄ×ª»»
+    //è¿‚å›åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool YuHuiToSreachPath(int flag)
     {
         throw new NotImplementedException();
@@ -192,7 +192,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     {
         throw new NotImplementedException();
     }
-    //Õì²éµ½ÆäËûµÄ×ª»»
+    //ä¾¦æŸ¥åˆ°å…¶ä»–çš„è½¬æ¢
     public override bool CheckToSreachPath(int flag)
     {
         throw new NotImplementedException();
@@ -232,7 +232,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     {
         animator.CrossFadeInFixedTime(animationName, 0.2f);
     }
-    //¹¥»÷×´Ì¬
+    //æ”»å‡»çŠ¶æ€
     public override void AtkStateUpdate()
     {
         throw new NotImplementedException();
@@ -248,7 +248,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //³·ÍË×´Ì¬
+    //æ’¤é€€çŠ¶æ€
     public override void BackStateUpdate()
     {
         
@@ -257,15 +257,15 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     public override void BackStateEnter()
     {
         ChangeAnimation("run");
-        //»ñÈ¡ÎÒ·½ÓªµØÎ»ÖÃ
+        //è·å–æˆ‘æ–¹è¥åœ°ä½ç½®
         if (atklayer == 1 << LayerMask.NameToLayer("Enmy"))
             targetPoint = LevelMgr.Instance.LevelData.HomePoint;
         else
             targetPoint = LevelMgr.Instance.LevelData.EnemyPoint;
-        //Ñ°Â·
+        //å¯»è·¯
         agent.SetDestination(targetPoint);
         agent.isStopped = false;
-        //»ØÑªÂß¼­
+        //å›è¡€é€»è¾‘
         MonoMgr.Instance.InvokeRepeating("RestoreHP", 0, 1);
     }
 
@@ -279,7 +279,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     {
         hp += armData.hp * 0.1f;
     }
-    //·ÀÓù×´Ì¬
+    //é˜²å¾¡çŠ¶æ€
     public override void DefenceStateUpdate()
     {
         throw new NotImplementedException();
@@ -294,7 +294,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     {
         throw new NotImplementedException();
     }
-    //ÓØ»Ø×´Ì¬
+    //è¿‚å›çŠ¶æ€
     public override void YuHuiStateUpdate()
     {
         throw new NotImplementedException();
@@ -310,7 +310,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //Õì²é×´Ì¬
+    //ä¾¦æŸ¥çŠ¶æ€
     public override void CheckStateUpdate()
     {
         throw new NotImplementedException();
@@ -326,7 +326,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         throw new NotImplementedException();
     }
 
-    //Ñ°Â·×´Ì¬
+    //å¯»è·¯çŠ¶æ€
     public override void SearchPathStateUpdate()
     {
        
@@ -344,7 +344,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
         agent.isStopped = true;
     }
 
-    //´ı»ú×´Ì¬
+    //å¾…æœºçŠ¶æ€
     public override void IdleStateUpdate()
     {
         
@@ -359,7 +359,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     public override void IdleStateExit()
     {
     }
-    //ËÀÍö×´Ì¬
+    //æ­»äº¡çŠ¶æ€
     public override void DeadStateUpdate()
     {
         
@@ -377,7 +377,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
 
     #endregion
 
-    #region IAtkerInfoµÄÄÚÈİ
+    #region IAtkerInfoçš„å†…å®¹
     public float AtkVal => atkVal;
 
     public Transform AtkTarget { get; set; }
@@ -393,13 +393,13 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
     public int CurAtkCnt { get; set; }
     #endregion
 
-    #region IHurtµÄÄÚÈİ
+    #region IHurtçš„å†…å®¹
     public virtual void Hurt(IAtkerInfo atkerInfo)
     {
         if(hp > 0)
         {
             hp -= atkerInfo.AtkVal;
-            //ËÀÍö
+            //æ­»äº¡
             if (hp <= 0)
             {
                 if(AtkTarget != null)
@@ -422,7 +422,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
 
     public void RestoreHP(float val)
     {
-        Debug.Log("»ØÑª + " + val);
+        Debug.Log("å›è¡€ + " + val);
         //if(this.hp < armData.HP)
         //    this.hp += val;
     }
@@ -431,7 +431,7 @@ public class ArmBase : AIBehaviour,IAtkerInfo,IHurt,IHurterInfo,ISelectable
 
     protected virtual void OnDrawGizmos()
     {
-        //»æÖÆ¹¥»÷·¶Î§
+        //ç»˜åˆ¶æ”»å‡»èŒƒå›´
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, atkDis);
     }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ÓªµØÀà
+/// è¥åœ°ç±»
 /// </summary>
 public class Home : MonoBehaviour, IHurt,IHurterInfo
 {
     public LayerMask layerMask;
-    //»ØÑª°ë¾¶
+    //å›è¡€åŠå¾„
     [SerializeField] private float hpRudis;
-    //»ØÑª¼ä¸ôÊ±¼ä
+    //å›è¡€é—´éš”æ—¶é—´
     [SerializeField]private float restoreHPDeltaTime;
     [SerializeField]private float restoreHP;
                     private float cutTime;

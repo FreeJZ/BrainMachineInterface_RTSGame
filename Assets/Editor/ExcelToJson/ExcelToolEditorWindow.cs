@@ -27,43 +27,43 @@ public class ExcelToolEditorWindow : EditorWindow
     {
         if (data == null) return;
 
-        EditorGUILayout.HelpBox("Excelºó×º£ºxlsx\nExcelÅäÖÃ¹æÔò£º\nµÚÒ»ĞĞ£º±äÁ¿Ãû\nµÚ¶şĞĞ£º±äÁ¿ÀàĞÍ\nµÚÈıĞĞ¼°ÒÔºó£º¾ßÌåÊı¾İ", MessageType.Info);
-        //Ä¬ÈÏÂ·¾¢
-        EditorGUILayout.LabelField("Ä¬ÈÏExcel´æ·ÅÂ·¾¶£º", data.defaultExcelStorePath);
-        EditorGUILayout.LabelField("Ä¬ÈÏDataClass´æ·ÅÂ·¾¶£º", data.defaultdataClassStorePath);
-        EditorGUILayout.LabelField("Ä¬ÈÏJsonFile´æ·ÅÂ·¾¶£º", data.defaultjsonFileStorePath);
+        EditorGUILayout.HelpBox("Excelåç¼€ï¼šxlsx\nExcelé…ç½®è§„åˆ™ï¼š\nç¬¬ä¸€è¡Œï¼šå˜é‡å\nç¬¬äºŒè¡Œï¼šå˜é‡ç±»å‹\nç¬¬ä¸‰è¡ŒåŠä»¥åï¼šå…·ä½“æ•°æ®", MessageType.Info);
+        //é»˜è®¤è·¯åŠ²
+        EditorGUILayout.LabelField("é»˜è®¤Excelå­˜æ”¾è·¯å¾„ï¼š", data.defaultExcelStorePath);
+        EditorGUILayout.LabelField("é»˜è®¤DataClasså­˜æ”¾è·¯å¾„ï¼š", data.defaultdataClassStorePath);
+        EditorGUILayout.LabelField("é»˜è®¤JsonFileå­˜æ”¾è·¯å¾„ï¼š", data.defaultjsonFileStorePath);
         
-        //×Ô¶¨ÒåÂ·¾¶
-        isCustom = EditorGUILayout.Toggle("×Ô¶¨Òå´æ·ÅÂ·¾¶", isCustom);
+        //è‡ªå®šä¹‰è·¯å¾„
+        isCustom = EditorGUILayout.Toggle("è‡ªå®šä¹‰å­˜æ”¾è·¯å¾„", isCustom);
         data.isCustom = isCustom;
         if(isCustom)
         {
-            data.customExcelStorePath = EditorGUILayout.TextField("Excel´æ·ÅÂ·¾¶£º", data.customExcelStorePath);
-            data.customdataClassStorePath = EditorGUILayout.TextField("DataClass´æ·ÅÂ·¾¶£º", data.customdataClassStorePath);
-            data.customjsonFileStorePath = EditorGUILayout.TextField("JsonFile´æ·ÅÂ·¾¶£º", data.customjsonFileStorePath);
+            data.customExcelStorePath = EditorGUILayout.TextField("Excelå­˜æ”¾è·¯å¾„ï¼š", data.customExcelStorePath);
+            data.customdataClassStorePath = EditorGUILayout.TextField("DataClasså­˜æ”¾è·¯å¾„ï¼š", data.customdataClassStorePath);
+            data.customjsonFileStorePath = EditorGUILayout.TextField("JsonFileå­˜æ”¾è·¯å¾„ï¼š", data.customjsonFileStorePath);
         }
 
-        if (GUILayout.Button("±£´æ×Ô¶¨ÒåĞŞ¸Ä"))
+        if (GUILayout.Button("ä¿å­˜è‡ªå®šä¹‰ä¿®æ”¹"))
         {
             EditorUtility.SetDirty(data);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
 
-        if (GUILayout.Button("Éú³ÉËùÑ¡DataClass"))
+        if (GUILayout.Button("ç”Ÿæˆæ‰€é€‰DataClass"))
         {
             Handle(E_HanldeType.ToDataClass);
         }
-        if (GUILayout.Button("Éú³ÉËùÑ¡JsonFile"))
+        if (GUILayout.Button("ç”Ÿæˆæ‰€é€‰JsonFile"))
         {
             Handle(E_HanldeType.ToJson);
         }
 
-        if (GUILayout.Button("Éú³ÉËùÓĞDataClass"))
+        if (GUILayout.Button("ç”Ÿæˆæ‰€æœ‰DataClass"))
         {
             HandleAll(E_HanldeType.ToDataClass);
         }
-        if(GUILayout.Button("Éú³ÉËùÓĞJsonFile"))
+        if(GUILayout.Button("ç”Ÿæˆæ‰€æœ‰JsonFile"))
         {
             HandleAll(E_HanldeType.ToJson);
         }
@@ -74,7 +74,7 @@ public class ExcelToolEditorWindow : EditorWindow
 
         if (objs.Length == 0)
         {
-            Debug.Log("Î´Ñ¡ÔñExcelÎÄ¼ş");
+            Debug.Log("æœªé€‰æ‹©Excelæ–‡ä»¶");
             return;
         }
 
@@ -123,7 +123,7 @@ public class ExcelToolEditorWindow : EditorWindow
         string path;
         path = Application.dataPath + "/" + (isCustom == true ? data.customExcelStorePath : data.defaultExcelStorePath);
 
-        //»ñÈ¡ÎÄ¼şµÄÄ¿Â¼ĞÅÏ¢
+        //è·å–æ–‡ä»¶çš„ç›®å½•ä¿¡æ¯
         DirectoryInfo dInfo = null;
         if (!Directory.Exists(path))
         {
@@ -133,12 +133,12 @@ public class ExcelToolEditorWindow : EditorWindow
         {
             dInfo = new DirectoryInfo(path);
         }
-        //»ñÈ¡ÎÄ¼şµÄĞÅÏ¢
+        //è·å–æ–‡ä»¶çš„ä¿¡æ¯
         FileInfo[] fInfos = dInfo.GetFiles();
 
         for (int i = 0; i < fInfos.Length; i++)
         {
-            //´¦ÀíExcelÎÄ¼ş
+            //å¤„ç†Excelæ–‡ä»¶
             if (fInfos[i].Extension == ".xlsx")
             {
                 using (FileStream fs = File.Open(fInfos[i].FullName, FileMode.Open, FileAccess.Read))

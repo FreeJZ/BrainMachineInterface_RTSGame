@@ -4,26 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 /// <summary>
-/// UI¹ÜÀíÆ÷
-/// ¶¯Ì¬ÏÔÊ¾Òş²ØÃæ°å
+/// UIç®¡ç†å™¨
+/// åŠ¨æ€æ˜¾ç¤ºéšè—é¢æ¿
 /// </summary>
 public class UIMgr : Singleton<UIMgr>
 {
-    //´æ·Åµ±Ç°ÏÔÊ¾µÄÃæ°å
+    //å­˜æ”¾å½“å‰æ˜¾ç¤ºçš„é¢æ¿
     private Dictionary<Type,PanelBase> panelDic = new Dictionary<Type,PanelBase>();
     private Transform canvasTrans;
     private UIMgr()
     {
-        //¶¯Ì¬Éú³ÉCanvasÔ¤ÉèÌå
+        //åŠ¨æ€ç”ŸæˆCanvasé¢„è®¾ä½“
         GameObject canvas = GameObjFactory.Instance.GetItem(ResPathConfig.UIPrefabPath + "Canvas");
         GameObject.DontDestroyOnLoad(canvas);
         canvasTrans = canvas.transform;
     }
 
     /// <summary>
-    /// ÏÔÊ¾Ãæ°å
+    /// æ˜¾ç¤ºé¢æ¿
     /// </summary>
-    /// <typeparam name="T">Ãæ°åÀàĞÍ</typeparam>
+    /// <typeparam name="T">é¢æ¿ç±»å‹</typeparam>
     public void ShowPanel<T>()
     {
         if (panelDic.ContainsKey(typeof(T))) return;
@@ -34,10 +34,10 @@ public class UIMgr : Singleton<UIMgr>
         panelBase.ShowMe();
     }
     /// <summary>
-    /// Òş²ØÃæ°å
+    /// éšè—é¢æ¿
     /// </summary>
-    /// <typeparam name="T">Ãæ°åÀàĞÍ</typeparam>
-    /// <param name="action">Ãæ°åÒş²ØºóËù×öµÄÊÂ¼ş</param>
+    /// <typeparam name="T">é¢æ¿ç±»å‹</typeparam>
+    /// <param name="action">é¢æ¿éšè—åæ‰€åšçš„äº‹ä»¶</param>
     public void HidePanel<T>(UnityAction action = null)
     {
         if (!panelDic.ContainsKey(typeof(T))) return;

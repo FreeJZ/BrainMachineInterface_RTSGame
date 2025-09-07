@@ -43,7 +43,7 @@ public interface IInvoker
     }
 
     /// <summary>
-    /// Ö´ĞĞµ±Ç°ÃüÁî
+    /// æ‰§è¡Œå½“å‰å‘½ä»¤
     /// </summary>
     public bool Exute()
     {
@@ -57,13 +57,13 @@ public interface IInvoker
         return false;
     }
     /// <summary>
-    /// »ØÍËÉÏÒ»¸öÃüÁî
+    /// å›é€€ä¸Šä¸€ä¸ªå‘½ä»¤
     /// </summary>
     public void Undo()
     {
         if (undoStack.Count == 0)
         {
-            Debug.Log("Ã»ÓĞÇ°Ò»¸öÃüÁî¿ÉÒÔ»ØÍË");
+            Debug.Log("æ²¡æœ‰å‰ä¸€ä¸ªå‘½ä»¤å¯ä»¥å›é€€");
             return;
         }
         redoStack.Push(curIndex);
@@ -75,13 +75,13 @@ public interface IInvoker
         
     }
     /// <summary>
-    /// Ç°½øÏÂÒ»¸öÃüÁî
+    /// å‰è¿›ä¸‹ä¸€ä¸ªå‘½ä»¤
     /// </summary>
     public void Redo()
     {
         if (redoStack.Count == 0)
         {
-            Debug.Log("Ã»ÓĞÏÂÒ»¸öÃüÁî¿ÉÒÔÇ°½ø");
+            Debug.Log("æ²¡æœ‰ä¸‹ä¸€ä¸ªå‘½ä»¤å¯ä»¥å‰è¿›");
             return;
         }
         undoStack.Push(curIndex);
@@ -92,7 +92,7 @@ public interface IInvoker
         });
     }
     /// <summary>
-    /// Ìí¼ÓÃüÁî
+    /// æ·»åŠ å‘½ä»¤
     /// </summary>
     /// <param name="cmd"></param>
     public void AddCmd(ComandBase cmd)

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// сно╥хК©з
+/// О©╫О©╫о╥О©╫О©╫О©╫
 /// </summary>
 public class GameEntery : MonoBehaviour
 {
     private void Awake()
     {
-        //йЩ╬щ╪сть
+        //О©╫О©╫О©╫щ╪О©╫О©╫О©╫
         DataMgr.Instance.LoadAllData();
 
         //SreachPath to other

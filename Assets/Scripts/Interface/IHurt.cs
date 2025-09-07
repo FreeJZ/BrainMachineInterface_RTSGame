@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ÊÜÉËĞĞÎªµÄ½Ó¿Ú
+/// å—ä¼¤è¡Œä¸ºçš„æ¥å£
 /// </summary>
 public interface IHurt
 {
